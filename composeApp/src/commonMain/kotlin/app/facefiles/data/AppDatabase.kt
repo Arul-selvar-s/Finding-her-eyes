@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 
 @Database(
     entities = [FileEntity::class, FaceEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 @ConstructedBy(AppDatabaseConstructor::class)
@@ -29,4 +29,6 @@ fun buildDatabase(builder: RoomDatabase.Builder<AppDatabase>): AppDatabase =
     builder
         .setDriver(BundledSQLiteDriver())
         .setQueryCoroutineContext(Dispatchers.IO)
+        // The index is rebuildable from disk, so schema changes simply rescan.
+        .fallbackToDestructiveMigration(dropAllTables = true)
         .build()

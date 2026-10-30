@@ -46,6 +46,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.core.ktx)
             implementation(libs.kotlinx.coroutines.android)
 
             // On-device inference (face detection + MobileFaceNet embeddings)
@@ -65,6 +66,7 @@ kotlin {
             // PDF text + embedded-image extraction on Windows
             // (Android will use the platform PdfRenderer / MediaMetadataRetriever instead)
             implementation(libs.pdfbox)
+            implementation(libs.metadata.extractor)
         }
     }
 }

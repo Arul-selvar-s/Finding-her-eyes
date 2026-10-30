@@ -2,8 +2,6 @@ package app.facefiles.scan
 
 import app.facefiles.data.FileDao
 import app.facefiles.data.FileEntity
-import app.facefiles.domain.FaceScanState
-import app.facefiles.domain.FileCategory
 import app.facefiles.domain.FileIndexer
 import app.facefiles.domain.ScanEvent
 import app.facefiles.domain.ScanStats
@@ -168,18 +166,13 @@ class FileScanner(
                 // Content changed (or brand new): faces found earlier are no longer trustworthy.
                 if (signature != null) resetFaces += path
                 counters.added.incrementAndGet()
-                val extension = entry.name.substringAfterLast('.', "").lowercase()
-                val category = FileCategory.fromExtension(extension)
-                upserts += FileEntity(
+                upserts += newFileEntity(
                     path = path,
                     name = entry.name,
                     parentPath = dir.path,
-                    extension = extension,
                     sizeBytes = entry.size,
                     modifiedAt = entry.modifiedMs,
-                    category = category,
-                    scanGeneration = generation,
-                    faceScanState = FaceScanState.initialFor(category, extension),
+                    generation = generation,
                 )
             }
         }

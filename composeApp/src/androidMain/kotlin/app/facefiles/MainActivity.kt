@@ -29,29 +29,42 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.facefiles.data.AppDatabase
 import app.facefiles.data.buildDatabase
+import app.facefiles.media.ThumbnailLoader
+import app.facefiles.ops.JvmFileOperations
+import app.facefiles.platform.AndroidMediaDecoder
 import app.facefiles.platform.androidDatabaseBuilder
 import app.facefiles.platform.androidScanRoots
+import app.facefiles.platform.openWithSystem
+import app.facefiles.platform.refreshMediaStore
 import app.facefiles.scan.FileScanner
 import app.facefiles.scan.ScanOptions
 import app.facefiles.ui.App
+import app.facefiles.ui.AppServices
 
 class MainActivity : ComponentActivity() {
 
     private var hasAccess by mutableStateOf(false)
     private lateinit var database: AppDatabase
-    private lateinit var scanner: FileScanner
+    private lateinit var services: AppServices
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         database = buildDatabase(androidDatabaseBuilder(this))
-        scanner = FileScanner(
-            fileDao = database.fileDao(),
-            rootsProvider = { androidScanRoots(this) },
-            options = ScanOptions(workers = 4),
+        val dao = database.fileDao()
+        services = AppServices(
+            fileDao = dao,
+            indexer = FileScanner(dao, { androidScanRoots(this) }, ScanOptions(workers = 4)),
+            ops = JvmFileOperations(
+                fileDao = dao,
+                rootsProvider = { androidScanRoots(this) },
+                openHandler = { file -> openWithSystem(this, file) },
+                afterChange = { paths -> refreshMediaStore(this, paths) },
+            ),
+            thumbnails = ThumbnailLoader(AndroidMediaDecoder()),
         )
         setContent {
             if (hasAccess) {
-                App(indexer = scanner, fileDao = database.fileDao())
+                App(services)
             } else {
                 AccessScreen(onGrant = ::requestAccess)
             }

@@ -19,6 +19,7 @@ import app.facefiles.domain.FaceSource
             parentColumns = ["path"],
             childColumns = ["filePath"],
             onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE,
         ),
     ],
     indices = [Index(value = ["filePath"])],
@@ -36,8 +37,12 @@ data class FaceEntity(
     val right: Float,
     val bottom: Float,
     val kind: FaceKind,
-    /** 128 little-endian float32 values = 512 bytes. */
+    /** 128 little-endian float32 values = 512 bytes, L2-normalised. */
     val embedding: ByteArray,
+    /** Detector confidence 0..1. */
+    val score: Float = 1f,
+    /** Small JPEG of the aligned face, for thumbnails. */
+    val thumb: ByteArray = ByteArray(0),
 )
 
 data class FaceVector(

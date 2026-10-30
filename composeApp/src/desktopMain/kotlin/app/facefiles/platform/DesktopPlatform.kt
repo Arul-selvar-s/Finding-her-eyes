@@ -3,6 +3,7 @@ package app.facefiles.platform
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import app.facefiles.data.AppDatabase
+import java.awt.Desktop
 import java.io.File
 
 fun desktopDatabaseBuilder(): RoomDatabase.Builder<AppDatabase> {
@@ -25,4 +26,22 @@ fun desktopScanRoots(): List<File> {
     val otherDrives = File.listRoots().filter { it.path != homeDrive && it.isDirectory }
 
     return userFolders + otherDrives
+}
+
+/** Where the folder browser / folder picker starts: the user profile plus every drive. */
+fun desktopBrowseRoots(): List<File> {
+    val home = File(System.getProperty("user.home"))
+    return (listOf(home) + File.listRoots().filter { it.isDirectory }).distinctBy { it.path }
+}
+
+/** Opens with the Windows default app for the file type. */
+fun desktopOpen(file: File): Boolean = try {
+    if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+        Desktop.getDesktop().open(file)
+        true
+    } else {
+        false
+    }
+} catch (e: Exception) {
+    false
 }

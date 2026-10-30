@@ -39,6 +39,33 @@ abstract class FileDao {
     @Query("DELETE FROM faces WHERE filePath IN (:paths)")
     abstract suspend fun deleteFacesFor(paths: List<String>)
 
+    // ---------- file operations (keep the index in sync without a rescan) ----------
+
+    /** Rename/move one file. Faces follow automatically (FK ON UPDATE CASCADE). */
+    @Query(
+        "UPDATE files SET path = :newPath, name = :newName, parentPath = :newParent, " +
+            "extension = :extension, category = :category WHERE path = :oldPath",
+    )
+    abstract suspend fun relocate(
+        oldPath: String,
+        newPath: String,
+        newName: String,
+        newParent: String,
+        extension: String,
+        category: FileCategory,
+    ): Int
+
+    /** Rename/move a whole folder: every path starting with [lower] ("old/") is re-based onto [newDir]. */
+    @Query(
+        "UPDATE files SET path = :newDir || substr(path, :oldDirLength + 1), " +
+            "parentPath = :newDir || substr(parentPath, :oldDirLength + 1) " +
+            "WHERE path >= :lower AND path < :upper",
+    )
+    abstract suspend fun relocateTree(newDir: String, oldDirLength: Int, lower: String, upper: String): Int
+
+    @Query("DELETE FROM files WHERE path >= :lower AND path < :upper")
+    abstract suspend fun deleteSubtree(lower: String, upper: String): Int
+
     /** One atomic write for a whole batch of directories. */
     @Transaction
     open suspend fun applyBatch(
