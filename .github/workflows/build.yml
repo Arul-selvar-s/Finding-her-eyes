@@ -1,0 +1,87 @@
+name: Build FaceFiles (Android APK + Windows app)
+
+on:
+  push:                 # every commit, on every branch
+  pull_request:
+  workflow_dispatch:    # "Run workflow" button in the Actions tab
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRADLE_VERSION: "8.11.1"   # installed by the workflow - no gradle-wrapper.jar needed in the repo
+  JAVA_VERSION: "17"
+
+jobs:
+  # ---------------------------------------------------------------------------
+  android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: ${{ env.GRADLE_VERSION }}
+
+      - name: Build debug APK
+        run: gradle :composeApp:assembleDebug --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FaceFiles-Android-APK
+          path: composeApp/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+  # ---------------------------------------------------------------------------
+  windows:
+    name: Windows desktop app
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: ${{ env.GRADLE_VERSION }}
+
+      # 1) Portable build: a folder with FaceFiles.exe + a bundled Java runtime.
+      #    Unzip anywhere and double-click. Needs no installer tooling, so it always works.
+      - name: Build portable app
+        run: gradle :composeApp:createDistributable --stacktrace
+
+      - name: Zip portable app
+        shell: pwsh
+        run: Compress-Archive -Path composeApp/build/compose/binaries/main/app/FaceFiles -DestinationPath FaceFiles-Windows-Portable.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FaceFiles-Windows-Portable
+          path: FaceFiles-Windows-Portable.zip
+          if-no-files-found: error
+
+      # 2) Real installer (.exe). jpackage needs the WiX Toolset; if the runner image
+      #    ever drops it, this step is allowed to fail without failing the whole build.
+      - name: Build installer (.exe)
+        id: installer
+        continue-on-error: true
+        run: gradle :composeApp:packageExe --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        if: steps.installer.outcome == 'success'
+        with:
+          name: FaceFiles-Windows-Installer
+          path: composeApp/build/compose/binaries/main/exe/*.exe
+          if-no-files-found: warn
