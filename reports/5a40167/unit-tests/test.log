@@ -1,0 +1,1377 @@
+Initialized native services in: /home/runner/.gradle/native
+Initialized jansi services in: /home/runner/.gradle/native
+Removing 0 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.11.1 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -Xmx4g -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.11.1/lib/gradle-daemon-main-8.11.1.jar -javaagent:/home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.11.1/lib/agents/gradle-instrumentation-agent-8.11.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.11.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.858 secs.
+The client will now receive all logging from the daemon (pid: 2288). The daemon log file: /home/runner/.gradle/daemon/8.11.1/daemon-2288.out.log
+Starting build in new daemon [memory: 4 GiB]
+Using 4 worker leases.
+Received JVM installation metadata from '/usr/lib/jvm/temurin-17-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64, JAVA_VERSION=17.0.21, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.21+9, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.21+9, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Now considering [/home/runner/work/Finding-her-eyes/Finding-her-eyes] as hierarchies to watch
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/home/runner/work/Finding-her-eyes/Finding-her-eyes/settings.gradle.kts'.
+Using local directory build cache for the root build (location = /home/runner/.gradle/caches/build-cache-1, remove unused entries = after 7 days).
+Projects loaded. Root project using build file '/home/runner/work/Finding-her-eyes/Finding-her-eyes/build.gradle.kts'.
+Included projects: [root project 'FaceFiles', project ':composeApp']
+
+> Configure project :
+Evaluating root project 'FaceFiles' using build file '/home/runner/work/Finding-her-eyes/Finding-her-eyes/build.gradle.kts'.
+Transforming room-gradle-plugin-2.7.1.jar (androidx.room:room-gradle-plugin:2.7.1) with InstrumentationAnalysisTransform
+Transforming gradle-8.7.3.jar (com.android.tools.build:gradle:8.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-settings-api-8.7.3.jar (com.android.tools.build:gradle-settings-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming lint-model-31.7.3.jar (com.android.tools.lint:lint-model:31.7.3) with InstrumentationAnalysisTransform
+Transforming builder-8.7.3.jar (com.android.tools.build:builder:8.7.3) with InstrumentationAnalysisTransform
+Transforming manifest-merger-31.7.3.jar (com.android.tools.build:manifest-merger:31.7.3) with InstrumentationAnalysisTransform
+Transforming sdk-common-31.7.3.jar (com.android.tools:sdk-common:31.7.3) with InstrumentationAnalysisTransform
+Transforming sdklib-31.7.3.jar (com.android.tools:sdklib:31.7.3) with InstrumentationAnalysisTransform
+Transforming repository-31.7.3.jar (com.android.tools:repository:31.7.3) with InstrumentationAnalysisTransform
+Transforming aaptcompiler-8.7.3.jar (com.android.tools.build:aaptcompiler:8.7.3) with InstrumentationAnalysisTransform
+Transforming tracker-31.7.3.jar (com.android.tools.analytics-library:tracker:31.7.3) with InstrumentationAnalysisTransform
+Transforming shared-31.7.3.jar (com.android.tools.analytics-library:shared:31.7.3) with InstrumentationAnalysisTransform
+Transforming databinding-compiler-common-8.7.3.jar (androidx.databinding:databinding-compiler-common:8.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-emulator-control-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-emulator-control-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-retention-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-retention-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming builder-model-8.7.3.jar (com.android.tools.build:builder-model:8.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-api-8.7.3.jar (com.android.tools.build:gradle-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming builder-test-api-8.7.3.jar (com.android.tools.build:builder-test-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming ddmlib-31.7.3.jar (com.android.tools.ddms:ddmlib:31.7.3) with InstrumentationAnalysisTransform
+Transforming layoutlib-api-31.7.3.jar (com.android.tools.layoutlib:layoutlib-api:31.7.3) with InstrumentationAnalysisTransform
+Transforming dvlib-31.7.3.jar (com.android.tools:dvlib:31.7.3) with InstrumentationAnalysisTransform
+Transforming common-31.7.3.jar (com.android.tools:common:31.7.3) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk8-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20) with InstrumentationAnalysisTransform
+Transforming jetifier-processor-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10) with InstrumentationAnalysisTransform
+Transforming jetifier-core-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10) with InstrumentationAnalysisTransform
+Transforming symbol-processing-gradle-plugin-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-gradle-plugin:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming symbol-processing-api-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-api:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming symbol-processing-common-deps-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-common-deps:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming kotlin-reflect-2.0.20.jar (org.jetbrains.kotlin:kotlin-reflect:2.0.20) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk7-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-2.0.20.jar (org.jetbrains.kotlin:kotlin-stdlib:2.0.20) with InstrumentationAnalysisTransform
+Transforming annotations-13.0.jar (org.jetbrains:annotations:13.0) with InstrumentationAnalysisTransform
+Transforming compose-gradle-plugin-1.8.2.jar (org.jetbrains.compose:compose-gradle-plugin:1.8.2) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-model-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-model:2.1.21) with InstrumentationAnalysisTransform
+Transforming fus-statistics-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:fus-statistics-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming compose-compiler-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming bundletool-1.17.1.jar (com.android.tools.build:bundletool:1.17.1) with InstrumentationAnalysisTransform
+Transforming aapt2-proto-8.7.3-12006047.jar (com.android.tools.build:aapt2-proto:8.7.3-12006047) with InstrumentationAnalysisTransform
+Transforming crash-31.7.3.jar (com.android.tools.analytics-library:crash:31.7.3) with InstrumentationAnalysisTransform
+Transforming lint-typedef-remover-31.7.3.jar (com.android.tools.lint:lint-typedef-remover:31.7.3) with InstrumentationAnalysisTransform
+Transforming databinding-common-8.7.3.jar (androidx.databinding:databinding-common:8.7.3) with InstrumentationAnalysisTransform
+Transforming baseLibrary-8.7.3.jar (com.android.databinding:baseLibrary:8.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-ddmlib-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-ddmlib-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-gradle-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-gradle-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-profile-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-profile-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-additional-test-output-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-additional-test-output-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-coverage-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-coverage-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-logcat-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-logcat-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-apk-installer-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-apk-installer-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-result-listener-gradle-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming transform-api-2.0.0-deprecated-use-gradle-api.jar (com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api) with InstrumentationAnalysisTransform
+Transforming httpmime-4.5.6.jar (org.apache.httpcomponents:httpmime:4.5.6) with InstrumentationAnalysisTransform
+Transforming commons-io-2.13.0.jar (commons-io:commons-io:2.13.0) with InstrumentationAnalysisTransform
+Transforming asm-commons-9.6.jar (org.ow2.asm:asm-commons:9.6) with InstrumentationAnalysisTransform
+Transforming asm-util-9.6.jar (org.ow2.asm:asm-util:9.6) with InstrumentationAnalysisTransform
+Transforming asm-analysis-9.6.jar (org.ow2.asm:asm-analysis:9.6) with InstrumentationAnalysisTransform
+Transforming asm-tree-9.6.jar (org.ow2.asm:asm-tree:9.6) with InstrumentationAnalysisTransform
+Transforming asm-9.6.jar (org.ow2.asm:asm:9.6) with InstrumentationAnalysisTransform
+Transforming apkzlib-8.7.3.jar (com.android.tools.build:apkzlib:8.7.3) with InstrumentationAnalysisTransform
+Transforming bcpkix-jdk18on-1.77.jar (org.bouncycastle:bcpkix-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming jaxb-runtime-2.3.2.jar (org.glassfish.jaxb:jaxb-runtime:2.3.2) with InstrumentationAnalysisTransform
+Transforming jopt-simple-4.9.jar (net.sf.jopt-simple:jopt-simple:4.9) with InstrumentationAnalysisTransform
+Transforming javapoet-1.10.0.jar (com.squareup:javapoet:1.10.0) with InstrumentationAnalysisTransform
+Transforming protobuf-java-util-3.22.3.jar (com.google.protobuf:protobuf-java-util:3.22.3) with InstrumentationAnalysisTransform
+Transforming grpc-protobuf-1.57.0.jar (io.grpc:grpc-protobuf:1.57.0) with InstrumentationAnalysisTransform
+Transforming tink-1.7.0.jar (com.google.crypto.tink:tink:1.7.0) with InstrumentationAnalysisTransform
+Transforming protos-31.7.3.jar (com.android.tools.analytics-library:protos:31.7.3) with InstrumentationAnalysisTransform
+Transforming proto-google-common-protos-2.17.0.jar (com.google.api.grpc:proto-google-common-protos:2.17.0) with InstrumentationAnalysisTransform
+Transforming protobuf-java-3.22.3.jar (com.google.protobuf:protobuf-java:3.22.3) with InstrumentationAnalysisTransform
+Transforming grpc-netty-1.57.0.jar (io.grpc:grpc-netty:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-core-1.57.0.jar (io.grpc:grpc-core:1.57.0) with InstrumentationAnalysisTransform
+Transforming kotlin-build-statistics-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-statistics:2.1.21) with InstrumentationAnalysisTransform
+Transforming gson-2.11.0.jar (com.google.code.gson:gson:2.11.0) with InstrumentationAnalysisTransform
+Transforming grpc-stub-1.57.0.jar (io.grpc:grpc-stub:1.57.0) with InstrumentationAnalysisTransform
+Transforming core-proto-0.0.9-alpha02.jar (com.google.testing.platform:core-proto:0.0.9-alpha02) with InstrumentationAnalysisTransform
+Transforming tensorflow-lite-metadata-0.1.0-rc2.jar (org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2) with InstrumentationAnalysisTransform
+Transforming flatbuffers-java-1.12.0.jar (com.google.flatbuffers:flatbuffers-java:1.12.0) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-proto-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-klib-commonizer-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-klib-commonizer-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-util-klib-metadata-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib-metadata:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-compiler-runner-2.1.21.jar (org.jetbrains.kotlin:kotlin-compiler-runner:2.1.21) with InstrumentationAnalysisTransform
+Transforming jimfs-1.1.jar (com.google.jimfs:jimfs:1.1) with InstrumentationAnalysisTransform
+Transforming grpc-context-1.57.0.jar (io.grpc:grpc-context:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-protobuf-lite-1.57.0.jar (io.grpc:grpc-protobuf-lite:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-api-1.57.0.jar (io.grpc:grpc-api:1.57.0) with InstrumentationAnalysisTransform
+Transforming guava-32.0.1-jre.jar (com.google.guava:guava:32.0.1-jre) with InstrumentationAnalysisTransform
+Transforming dagger-2.28.3.jar (com.google.dagger:dagger:2.28.3) with InstrumentationAnalysisTransform
+Transforming javax.inject-1.jar (javax.inject:javax.inject:1) with InstrumentationAnalysisTransform
+Transforming kxml2-2.3.0.jar (net.sf.kxml:kxml2:2.3.0) with InstrumentationAnalysisTransform
+Transforming bcutil-jdk18on-1.77.jar (org.bouncycastle:bcutil-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming bcprov-jdk18on-1.77.jar (org.bouncycastle:bcprov-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming trove4j-1.0.20200330.jar (org.jetbrains.intellij.deps:trove4j:1.0.20200330) with InstrumentationAnalysisTransform
+Transforming commons-compress-1.21.jar (org.apache.commons:commons-compress:1.21) with InstrumentationAnalysisTransform
+Transforming httpclient-4.5.14.jar (org.apache.httpcomponents:httpclient:4.5.14) with InstrumentationAnalysisTransform
+Transforming httpcore-4.4.16.jar (org.apache.httpcomponents:httpcore:4.4.16) with InstrumentationAnalysisTransform
+Transforming javax.activation-1.2.0.jar (com.sun.activation:javax.activation:1.2.0) with InstrumentationAnalysisTransform
+Transforming signflinger-8.7.3.jar (com.android:signflinger:8.7.3) with InstrumentationAnalysisTransform
+Transforming zipflinger-8.7.3.jar (com.android:zipflinger:8.7.3) with InstrumentationAnalysisTransform
+Transforming annotations-31.7.3.jar (com.android.tools:annotations:31.7.3) with InstrumentationAnalysisTransform
+Transforming jna-platform-5.6.0.jar (net.java.dev.jna:jna-platform:5.6.0) with InstrumentationAnalysisTransform
+Transforming juniversalchardet-1.0.3.jar (com.googlecode.juniversalchardet:juniversalchardet:1.0.3) with InstrumentationAnalysisTransform
+Transforming javax.annotation-api-1.3.2.jar (javax.annotation:javax.annotation-api:1.3.2) with InstrumentationAnalysisTransform
+Transforming stax-ex-1.8.1.jar (org.jvnet.staxex:stax-ex:1.8.1) with InstrumentationAnalysisTransform
+Transforming jakarta.xml.bind-api-2.3.2.jar (jakarta.xml.bind:jakarta.xml.bind-api:2.3.2) with InstrumentationAnalysisTransform
+Transforming txw2-2.3.2.jar (org.glassfish.jaxb:txw2:2.3.2) with InstrumentationAnalysisTransform
+Transforming istack-commons-runtime-3.0.8.jar (com.sun.istack:istack-commons-runtime:3.0.8) with InstrumentationAnalysisTransform
+Transforming FastInfoset-1.2.16.jar (com.sun.xml.fastinfoset:FastInfoset:1.2.16) with InstrumentationAnalysisTransform
+Transforming jakarta.activation-api-1.2.1.jar (jakarta.activation:jakarta.activation-api:1.2.1) with InstrumentationAnalysisTransform
+Transforming auto-value-annotations-1.6.2.jar (com.google.auto.value:auto-value-annotations:1.6.2) with InstrumentationAnalysisTransform
+Transforming error_prone_annotations-2.27.0.jar (com.google.errorprone:error_prone_annotations:2.27.0) with InstrumentationAnalysisTransform
+Transforming jose4j-0.9.5.jar (org.bitbucket.b_c:jose4j:0.9.5) with InstrumentationAnalysisTransform
+Transforming slf4j-api-1.7.30.jar (org.slf4j:slf4j-api:1.7.30) with InstrumentationAnalysisTransform
+Transforming jdom2-2.0.6.jar (org.jdom:jdom2:2.0.6) with InstrumentationAnalysisTransform
+Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+Transforming j2objc-annotations-2.8.jar (com.google.j2objc:j2objc-annotations:2.8) with InstrumentationAnalysisTransform
+Transforming annotations-4.1.1.4.jar (com.google.android:annotations:4.1.1.4) with InstrumentationAnalysisTransform
+Transforming animal-sniffer-annotations-1.23.jar (org.codehaus.mojo:animal-sniffer-annotations:1.23) with InstrumentationAnalysisTransform
+Transforming perfmark-api-0.26.0.jar (io.perfmark:perfmark-api:0.26.0) with InstrumentationAnalysisTransform
+Transforming netty-codec-http2-4.1.93.Final.jar (io.netty:netty-codec-http2:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-handler-proxy-4.1.93.Final.jar (io.netty:netty-handler-proxy:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-http-4.1.93.Final.jar (io.netty:netty-codec-http:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-handler-4.1.93.Final.jar (io.netty:netty-handler:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-transport-native-unix-common-4.1.93.Final.jar (io.netty:netty-transport-native-unix-common:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming checker-qual-3.33.0.jar (org.checkerframework:checker-qual:3.33.0) with InstrumentationAnalysisTransform
+Transforming commons-codec-1.11.jar (commons-codec:commons-codec:1.11) with InstrumentationAnalysisTransform
+Transforming apksig-8.7.3.jar (com.android.tools.build:apksig:8.7.3) with InstrumentationAnalysisTransform
+Transforming javawriter-2.5.0.jar (com.squareup:javawriter:2.5.0) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-annotations-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-native-utils-2.1.21.jar (org.jetbrains.kotlin:kotlin-native-utils:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-tooling-core-2.1.21.jar (org.jetbrains.kotlin:kotlin-tooling-core:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-build-tools-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-tools-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-util-klib-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-util-io-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-io:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-daemon-client-2.1.21.jar (org.jetbrains.kotlin:kotlin-daemon-client:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlinx-coroutines-core-jvm-1.8.0.jar (org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0) with InstrumentationAnalysisTransform
+Transforming failureaccess-1.0.1.jar (com.google.guava:failureaccess:1.0.1) with InstrumentationAnalysisTransform
+Transforming listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava) with InstrumentationAnalysisTransform
+Transforming commons-logging-1.2.jar (commons-logging:commons-logging:1.2) with InstrumentationAnalysisTransform
+Transforming jna-5.6.0.jar (net.java.dev.jna:jna:5.6.0) with InstrumentationAnalysisTransform
+Transforming netty-codec-socks-4.1.93.Final.jar (io.netty:netty-codec-socks:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-4.1.93.Final.jar (io.netty:netty-codec:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-transport-4.1.93.Final.jar (io.netty:netty-transport:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-buffer-4.1.93.Final.jar (io.netty:netty-buffer:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-resolver-4.1.93.Final.jar (io.netty:netty-resolver:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-common-4.1.93.Final.jar (io.netty:netty-common:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming room-gradle-plugin-2.7.1.jar (androidx.room:room-gradle-plugin:2.7.1) with InstrumentationAnalysisTransform
+Transforming room-gradle-plugin-2.7.1.jar (androidx.room:room-gradle-plugin:2.7.1) with MergeInstrumentationAnalysisTransform
+Transforming gradle-8.7.3.jar (com.android.tools.build:gradle:8.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-8.7.3.jar (com.android.tools.build:gradle:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming gradle-settings-api-8.7.3.jar (com.android.tools.build:gradle-settings-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-settings-api-8.7.3.jar (com.android.tools.build:gradle-settings-api:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming lint-model-31.7.3.jar (com.android.tools.lint:lint-model:31.7.3) with InstrumentationAnalysisTransform
+Transforming lint-model-31.7.3.jar (com.android.tools.lint:lint-model:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming builder-8.7.3.jar (com.android.tools.build:builder:8.7.3) with InstrumentationAnalysisTransform
+Transforming builder-8.7.3.jar (com.android.tools.build:builder:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming manifest-merger-31.7.3.jar (com.android.tools.build:manifest-merger:31.7.3) with InstrumentationAnalysisTransform
+Transforming manifest-merger-31.7.3.jar (com.android.tools.build:manifest-merger:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming sdk-common-31.7.3.jar (com.android.tools:sdk-common:31.7.3) with InstrumentationAnalysisTransform
+Transforming sdk-common-31.7.3.jar (com.android.tools:sdk-common:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming sdklib-31.7.3.jar (com.android.tools:sdklib:31.7.3) with InstrumentationAnalysisTransform
+Transforming sdklib-31.7.3.jar (com.android.tools:sdklib:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming repository-31.7.3.jar (com.android.tools:repository:31.7.3) with InstrumentationAnalysisTransform
+Transforming repository-31.7.3.jar (com.android.tools:repository:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming aaptcompiler-8.7.3.jar (com.android.tools.build:aaptcompiler:8.7.3) with InstrumentationAnalysisTransform
+Transforming aaptcompiler-8.7.3.jar (com.android.tools.build:aaptcompiler:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming tracker-31.7.3.jar (com.android.tools.analytics-library:tracker:31.7.3) with InstrumentationAnalysisTransform
+Transforming tracker-31.7.3.jar (com.android.tools.analytics-library:tracker:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming shared-31.7.3.jar (com.android.tools.analytics-library:shared:31.7.3) with InstrumentationAnalysisTransform
+Transforming shared-31.7.3.jar (com.android.tools.analytics-library:shared:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming databinding-compiler-common-8.7.3.jar (androidx.databinding:databinding-compiler-common:8.7.3) with InstrumentationAnalysisTransform
+Transforming databinding-compiler-common-8.7.3.jar (androidx.databinding:databinding-compiler-common:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-emulator-control-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-emulator-control-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-emulator-control-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-emulator-control-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-retention-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-retention-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-retention-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-retention-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming builder-model-8.7.3.jar (com.android.tools.build:builder-model:8.7.3) with InstrumentationAnalysisTransform
+Transforming builder-model-8.7.3.jar (com.android.tools.build:builder-model:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming gradle-api-8.7.3.jar (com.android.tools.build:gradle-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-api-8.7.3.jar (com.android.tools.build:gradle-api:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming builder-test-api-8.7.3.jar (com.android.tools.build:builder-test-api:8.7.3) with InstrumentationAnalysisTransform
+Transforming builder-test-api-8.7.3.jar (com.android.tools.build:builder-test-api:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming ddmlib-31.7.3.jar (com.android.tools.ddms:ddmlib:31.7.3) with InstrumentationAnalysisTransform
+Transforming gradle-settings-api-8.7.3.jar (com.android.tools.build:gradle-settings-api:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming ddmlib-31.7.3.jar (com.android.tools.ddms:ddmlib:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming layoutlib-api-31.7.3.jar (com.android.tools.layoutlib:layoutlib-api:31.7.3) with InstrumentationAnalysisTransform
+Transforming layoutlib-api-31.7.3.jar (com.android.tools.layoutlib:layoutlib-api:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming dvlib-31.7.3.jar (com.android.tools:dvlib:31.7.3) with InstrumentationAnalysisTransform
+Transforming dvlib-31.7.3.jar (com.android.tools:dvlib:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming common-31.7.3.jar (com.android.tools:common:31.7.3) with InstrumentationAnalysisTransform
+Transforming common-31.7.3.jar (com.android.tools:common:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk8-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk8-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20) with MergeInstrumentationAnalysisTransform
+Transforming jetifier-processor-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10) with InstrumentationAnalysisTransform
+Transforming jetifier-processor-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10) with MergeInstrumentationAnalysisTransform
+Transforming jetifier-core-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10) with InstrumentationAnalysisTransform
+Transforming jetifier-core-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10) with MergeInstrumentationAnalysisTransform
+Transforming symbol-processing-gradle-plugin-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-gradle-plugin:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming room-gradle-plugin-2.7.1.jar (androidx.room:room-gradle-plugin:2.7.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming symbol-processing-gradle-plugin-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-gradle-plugin:2.1.21-2.0.1) with MergeInstrumentationAnalysisTransform
+Transforming symbol-processing-api-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-api:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming symbol-processing-api-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-api:2.1.21-2.0.1) with MergeInstrumentationAnalysisTransform
+Transforming symbol-processing-common-deps-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-common-deps:2.1.21-2.0.1) with InstrumentationAnalysisTransform
+Transforming symbol-processing-common-deps-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-common-deps:2.1.21-2.0.1) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-reflect-2.0.20.jar (org.jetbrains.kotlin:kotlin-reflect:2.0.20) with InstrumentationAnalysisTransform
+Transforming kotlin-reflect-2.0.20.jar (org.jetbrains.kotlin:kotlin-reflect:2.0.20) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk7-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-jdk7-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-stdlib-2.0.20.jar (org.jetbrains.kotlin:kotlin-stdlib:2.0.20) with InstrumentationAnalysisTransform
+Transforming kotlin-stdlib-2.0.20.jar (org.jetbrains.kotlin:kotlin-stdlib:2.0.20) with MergeInstrumentationAnalysisTransform
+Transforming annotations-13.0.jar (org.jetbrains:annotations:13.0) with InstrumentationAnalysisTransform
+Transforming annotations-13.0.jar (org.jetbrains:annotations:13.0) with MergeInstrumentationAnalysisTransform
+Transforming compose-gradle-plugin-1.8.2.jar (org.jetbrains.compose:compose-gradle-plugin:1.8.2) with InstrumentationAnalysisTransform
+Transforming compose-gradle-plugin-1.8.2.jar (org.jetbrains.compose:compose-gradle-plugin:1.8.2) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming gradle-8.7.3.jar (com.android.tools.build:gradle:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-model-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-model:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-model-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-model:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming fus-statistics-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:fus-statistics-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming fus-statistics-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:fus-statistics-gradle-plugin:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming compose-compiler-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.21) with InstrumentationAnalysisTransform
+Transforming compose-compiler-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming bundletool-1.17.1.jar (com.android.tools.build:bundletool:1.17.1) with InstrumentationAnalysisTransform
+Transforming bundletool-1.17.1.jar (com.android.tools.build:bundletool:1.17.1) with MergeInstrumentationAnalysisTransform
+Transforming aapt2-proto-8.7.3-12006047.jar (com.android.tools.build:aapt2-proto:8.7.3-12006047) with InstrumentationAnalysisTransform
+Transforming aapt2-proto-8.7.3-12006047.jar (com.android.tools.build:aapt2-proto:8.7.3-12006047) with MergeInstrumentationAnalysisTransform
+Transforming crash-31.7.3.jar (com.android.tools.analytics-library:crash:31.7.3) with InstrumentationAnalysisTransform
+Transforming crash-31.7.3.jar (com.android.tools.analytics-library:crash:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming lint-typedef-remover-31.7.3.jar (com.android.tools.lint:lint-typedef-remover:31.7.3) with InstrumentationAnalysisTransform
+Transforming lint-typedef-remover-31.7.3.jar (com.android.tools.lint:lint-typedef-remover:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming databinding-common-8.7.3.jar (androidx.databinding:databinding-common:8.7.3) with InstrumentationAnalysisTransform
+Transforming databinding-common-8.7.3.jar (androidx.databinding:databinding-common:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming baseLibrary-8.7.3.jar (com.android.databinding:baseLibrary:8.7.3) with InstrumentationAnalysisTransform
+Transforming baseLibrary-8.7.3.jar (com.android.databinding:baseLibrary:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-device-provider-ddmlib-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-ddmlib-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-ddmlib-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-ddmlib-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-device-provider-gradle-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-gradle-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-gradle-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-gradle-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-device-provider-profile-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-profile-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-device-provider-profile-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-profile-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-additional-test-output-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-additional-test-output-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-additional-test-output-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-additional-test-output-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-coverage-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-coverage-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-coverage-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-coverage-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-logcat-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-logcat-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-logcat-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-logcat-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-host-apk-installer-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-apk-installer-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-host-apk-installer-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-apk-installer-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming android-test-plugin-result-listener-gradle-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.7.3) with InstrumentationAnalysisTransform
+Transforming android-test-plugin-result-listener-gradle-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming transform-api-2.0.0-deprecated-use-gradle-api.jar (com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api) with InstrumentationAnalysisTransform
+Transforming transform-api-2.0.0-deprecated-use-gradle-api.jar (com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api) with MergeInstrumentationAnalysisTransform
+Transforming httpmime-4.5.6.jar (org.apache.httpcomponents:httpmime:4.5.6) with InstrumentationAnalysisTransform
+Transforming httpmime-4.5.6.jar (org.apache.httpcomponents:httpmime:4.5.6) with MergeInstrumentationAnalysisTransform
+Transforming commons-io-2.13.0.jar (commons-io:commons-io:2.13.0) with InstrumentationAnalysisTransform
+Transforming commons-io-2.13.0.jar (commons-io:commons-io:2.13.0) with MergeInstrumentationAnalysisTransform
+Transforming asm-commons-9.6.jar (org.ow2.asm:asm-commons:9.6) with InstrumentationAnalysisTransform
+Transforming asm-commons-9.6.jar (org.ow2.asm:asm-commons:9.6) with MergeInstrumentationAnalysisTransform
+Transforming asm-util-9.6.jar (org.ow2.asm:asm-util:9.6) with InstrumentationAnalysisTransform
+Transforming asm-util-9.6.jar (org.ow2.asm:asm-util:9.6) with MergeInstrumentationAnalysisTransform
+Transforming asm-analysis-9.6.jar (org.ow2.asm:asm-analysis:9.6) with InstrumentationAnalysisTransform
+Transforming asm-analysis-9.6.jar (org.ow2.asm:asm-analysis:9.6) with MergeInstrumentationAnalysisTransform
+Transforming asm-tree-9.6.jar (org.ow2.asm:asm-tree:9.6) with InstrumentationAnalysisTransform
+Transforming asm-tree-9.6.jar (org.ow2.asm:asm-tree:9.6) with MergeInstrumentationAnalysisTransform
+Transforming asm-9.6.jar (org.ow2.asm:asm:9.6) with InstrumentationAnalysisTransform
+Transforming asm-9.6.jar (org.ow2.asm:asm:9.6) with MergeInstrumentationAnalysisTransform
+Transforming apkzlib-8.7.3.jar (com.android.tools.build:apkzlib:8.7.3) with InstrumentationAnalysisTransform
+Transforming apkzlib-8.7.3.jar (com.android.tools.build:apkzlib:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming bcpkix-jdk18on-1.77.jar (org.bouncycastle:bcpkix-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming bcpkix-jdk18on-1.77.jar (org.bouncycastle:bcpkix-jdk18on:1.77) with MergeInstrumentationAnalysisTransform
+Transforming jaxb-runtime-2.3.2.jar (org.glassfish.jaxb:jaxb-runtime:2.3.2) with InstrumentationAnalysisTransform
+Transforming jaxb-runtime-2.3.2.jar (org.glassfish.jaxb:jaxb-runtime:2.3.2) with MergeInstrumentationAnalysisTransform
+Transforming jopt-simple-4.9.jar (net.sf.jopt-simple:jopt-simple:4.9) with InstrumentationAnalysisTransform
+Transforming jopt-simple-4.9.jar (net.sf.jopt-simple:jopt-simple:4.9) with MergeInstrumentationAnalysisTransform
+Transforming javapoet-1.10.0.jar (com.squareup:javapoet:1.10.0) with InstrumentationAnalysisTransform
+Transforming javapoet-1.10.0.jar (com.squareup:javapoet:1.10.0) with MergeInstrumentationAnalysisTransform
+Transforming protobuf-java-util-3.22.3.jar (com.google.protobuf:protobuf-java-util:3.22.3) with InstrumentationAnalysisTransform
+Transforming protobuf-java-util-3.22.3.jar (com.google.protobuf:protobuf-java-util:3.22.3) with MergeInstrumentationAnalysisTransform
+Transforming grpc-protobuf-1.57.0.jar (io.grpc:grpc-protobuf:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-protobuf-1.57.0.jar (io.grpc:grpc-protobuf:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming tink-1.7.0.jar (com.google.crypto.tink:tink:1.7.0) with InstrumentationAnalysisTransform
+Transforming tink-1.7.0.jar (com.google.crypto.tink:tink:1.7.0) with MergeInstrumentationAnalysisTransform
+Transforming lint-model-31.7.3.jar (com.android.tools.lint:lint-model:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming protos-31.7.3.jar (com.android.tools.analytics-library:protos:31.7.3) with InstrumentationAnalysisTransform
+Transforming protos-31.7.3.jar (com.android.tools.analytics-library:protos:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming proto-google-common-protos-2.17.0.jar (com.google.api.grpc:proto-google-common-protos:2.17.0) with InstrumentationAnalysisTransform
+Transforming proto-google-common-protos-2.17.0.jar (com.google.api.grpc:proto-google-common-protos:2.17.0) with MergeInstrumentationAnalysisTransform
+Transforming protobuf-java-3.22.3.jar (com.google.protobuf:protobuf-java:3.22.3) with InstrumentationAnalysisTransform
+Transforming protobuf-java-3.22.3.jar (com.google.protobuf:protobuf-java:3.22.3) with MergeInstrumentationAnalysisTransform
+Transforming grpc-netty-1.57.0.jar (io.grpc:grpc-netty:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-netty-1.57.0.jar (io.grpc:grpc-netty:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming grpc-core-1.57.0.jar (io.grpc:grpc-core:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-core-1.57.0.jar (io.grpc:grpc-core:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-build-statistics-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-statistics:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-build-statistics-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-statistics:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming gson-2.11.0.jar (com.google.code.gson:gson:2.11.0) with InstrumentationAnalysisTransform
+Transforming gson-2.11.0.jar (com.google.code.gson:gson:2.11.0) with MergeInstrumentationAnalysisTransform
+Transforming grpc-stub-1.57.0.jar (io.grpc:grpc-stub:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-stub-1.57.0.jar (io.grpc:grpc-stub:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming core-proto-0.0.9-alpha02.jar (com.google.testing.platform:core-proto:0.0.9-alpha02) with InstrumentationAnalysisTransform
+Transforming core-proto-0.0.9-alpha02.jar (com.google.testing.platform:core-proto:0.0.9-alpha02) with MergeInstrumentationAnalysisTransform
+Transforming tensorflow-lite-metadata-0.1.0-rc2.jar (org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2) with InstrumentationAnalysisTransform
+Transforming tensorflow-lite-metadata-0.1.0-rc2.jar (org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2) with MergeInstrumentationAnalysisTransform
+Transforming flatbuffers-java-1.12.0.jar (com.google.flatbuffers:flatbuffers-java:1.12.0) with InstrumentationAnalysisTransform
+Transforming flatbuffers-java-1.12.0.jar (com.google.flatbuffers:flatbuffers-java:1.12.0) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-proto-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-proto-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-idea-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-klib-commonizer-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-klib-commonizer-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-klib-commonizer-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-klib-commonizer-api:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-util-klib-metadata-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib-metadata:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-util-klib-metadata-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib-metadata:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-compiler-runner-2.1.21.jar (org.jetbrains.kotlin:kotlin-compiler-runner:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-compiler-runner-2.1.21.jar (org.jetbrains.kotlin:kotlin-compiler-runner:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming jimfs-1.1.jar (com.google.jimfs:jimfs:1.1) with InstrumentationAnalysisTransform
+Transforming jimfs-1.1.jar (com.google.jimfs:jimfs:1.1) with MergeInstrumentationAnalysisTransform
+Transforming grpc-context-1.57.0.jar (io.grpc:grpc-context:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-context-1.57.0.jar (io.grpc:grpc-context:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming grpc-protobuf-lite-1.57.0.jar (io.grpc:grpc-protobuf-lite:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-protobuf-lite-1.57.0.jar (io.grpc:grpc-protobuf-lite:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming grpc-api-1.57.0.jar (io.grpc:grpc-api:1.57.0) with InstrumentationAnalysisTransform
+Transforming grpc-api-1.57.0.jar (io.grpc:grpc-api:1.57.0) with MergeInstrumentationAnalysisTransform
+Transforming guava-32.0.1-jre.jar (com.google.guava:guava:32.0.1-jre) with InstrumentationAnalysisTransform
+Transforming guava-32.0.1-jre.jar (com.google.guava:guava:32.0.1-jre) with MergeInstrumentationAnalysisTransform
+Transforming dagger-2.28.3.jar (com.google.dagger:dagger:2.28.3) with InstrumentationAnalysisTransform
+Transforming dagger-2.28.3.jar (com.google.dagger:dagger:2.28.3) with MergeInstrumentationAnalysisTransform
+Transforming javax.inject-1.jar (javax.inject:javax.inject:1) with InstrumentationAnalysisTransform
+Transforming javax.inject-1.jar (javax.inject:javax.inject:1) with MergeInstrumentationAnalysisTransform
+Transforming kxml2-2.3.0.jar (net.sf.kxml:kxml2:2.3.0) with InstrumentationAnalysisTransform
+Transforming kxml2-2.3.0.jar (net.sf.kxml:kxml2:2.3.0) with MergeInstrumentationAnalysisTransform
+Transforming bcutil-jdk18on-1.77.jar (org.bouncycastle:bcutil-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming bcutil-jdk18on-1.77.jar (org.bouncycastle:bcutil-jdk18on:1.77) with MergeInstrumentationAnalysisTransform
+Transforming bcprov-jdk18on-1.77.jar (org.bouncycastle:bcprov-jdk18on:1.77) with InstrumentationAnalysisTransform
+Transforming bcprov-jdk18on-1.77.jar (org.bouncycastle:bcprov-jdk18on:1.77) with MergeInstrumentationAnalysisTransform
+Transforming trove4j-1.0.20200330.jar (org.jetbrains.intellij.deps:trove4j:1.0.20200330) with InstrumentationAnalysisTransform
+Transforming trove4j-1.0.20200330.jar (org.jetbrains.intellij.deps:trove4j:1.0.20200330) with MergeInstrumentationAnalysisTransform
+Transforming commons-compress-1.21.jar (org.apache.commons:commons-compress:1.21) with InstrumentationAnalysisTransform
+Transforming commons-compress-1.21.jar (org.apache.commons:commons-compress:1.21) with MergeInstrumentationAnalysisTransform
+Transforming httpclient-4.5.14.jar (org.apache.httpcomponents:httpclient:4.5.14) with InstrumentationAnalysisTransform
+Transforming httpclient-4.5.14.jar (org.apache.httpcomponents:httpclient:4.5.14) with MergeInstrumentationAnalysisTransform
+Transforming httpcore-4.4.16.jar (org.apache.httpcomponents:httpcore:4.4.16) with InstrumentationAnalysisTransform
+Transforming httpcore-4.4.16.jar (org.apache.httpcomponents:httpcore:4.4.16) with MergeInstrumentationAnalysisTransform
+Transforming javax.activation-1.2.0.jar (com.sun.activation:javax.activation:1.2.0) with InstrumentationAnalysisTransform
+Transforming javax.activation-1.2.0.jar (com.sun.activation:javax.activation:1.2.0) with MergeInstrumentationAnalysisTransform
+Transforming signflinger-8.7.3.jar (com.android:signflinger:8.7.3) with InstrumentationAnalysisTransform
+Transforming signflinger-8.7.3.jar (com.android:signflinger:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming zipflinger-8.7.3.jar (com.android:zipflinger:8.7.3) with InstrumentationAnalysisTransform
+Transforming zipflinger-8.7.3.jar (com.android:zipflinger:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming annotations-31.7.3.jar (com.android.tools:annotations:31.7.3) with InstrumentationAnalysisTransform
+Transforming annotations-31.7.3.jar (com.android.tools:annotations:31.7.3) with MergeInstrumentationAnalysisTransform
+Transforming jna-platform-5.6.0.jar (net.java.dev.jna:jna-platform:5.6.0) with InstrumentationAnalysisTransform
+Transforming jna-platform-5.6.0.jar (net.java.dev.jna:jna-platform:5.6.0) with MergeInstrumentationAnalysisTransform
+Transforming juniversalchardet-1.0.3.jar (com.googlecode.juniversalchardet:juniversalchardet:1.0.3) with InstrumentationAnalysisTransform
+Transforming juniversalchardet-1.0.3.jar (com.googlecode.juniversalchardet:juniversalchardet:1.0.3) with MergeInstrumentationAnalysisTransform
+Transforming javax.annotation-api-1.3.2.jar (javax.annotation:javax.annotation-api:1.3.2) with InstrumentationAnalysisTransform
+Transforming javax.annotation-api-1.3.2.jar (javax.annotation:javax.annotation-api:1.3.2) with MergeInstrumentationAnalysisTransform
+Transforming stax-ex-1.8.1.jar (org.jvnet.staxex:stax-ex:1.8.1) with InstrumentationAnalysisTransform
+Transforming stax-ex-1.8.1.jar (org.jvnet.staxex:stax-ex:1.8.1) with MergeInstrumentationAnalysisTransform
+Transforming jakarta.xml.bind-api-2.3.2.jar (jakarta.xml.bind:jakarta.xml.bind-api:2.3.2) with InstrumentationAnalysisTransform
+Transforming jakarta.xml.bind-api-2.3.2.jar (jakarta.xml.bind:jakarta.xml.bind-api:2.3.2) with MergeInstrumentationAnalysisTransform
+Transforming txw2-2.3.2.jar (org.glassfish.jaxb:txw2:2.3.2) with InstrumentationAnalysisTransform
+Transforming txw2-2.3.2.jar (org.glassfish.jaxb:txw2:2.3.2) with MergeInstrumentationAnalysisTransform
+Transforming istack-commons-runtime-3.0.8.jar (com.sun.istack:istack-commons-runtime:3.0.8) with InstrumentationAnalysisTransform
+Transforming istack-commons-runtime-3.0.8.jar (com.sun.istack:istack-commons-runtime:3.0.8) with MergeInstrumentationAnalysisTransform
+Transforming FastInfoset-1.2.16.jar (com.sun.xml.fastinfoset:FastInfoset:1.2.16) with InstrumentationAnalysisTransform
+Transforming FastInfoset-1.2.16.jar (com.sun.xml.fastinfoset:FastInfoset:1.2.16) with MergeInstrumentationAnalysisTransform
+Transforming jakarta.activation-api-1.2.1.jar (jakarta.activation:jakarta.activation-api:1.2.1) with InstrumentationAnalysisTransform
+Transforming jakarta.activation-api-1.2.1.jar (jakarta.activation:jakarta.activation-api:1.2.1) with MergeInstrumentationAnalysisTransform
+Transforming auto-value-annotations-1.6.2.jar (com.google.auto.value:auto-value-annotations:1.6.2) with InstrumentationAnalysisTransform
+Transforming auto-value-annotations-1.6.2.jar (com.google.auto.value:auto-value-annotations:1.6.2) with MergeInstrumentationAnalysisTransform
+Transforming error_prone_annotations-2.27.0.jar (com.google.errorprone:error_prone_annotations:2.27.0) with InstrumentationAnalysisTransform
+Transforming error_prone_annotations-2.27.0.jar (com.google.errorprone:error_prone_annotations:2.27.0) with MergeInstrumentationAnalysisTransform
+Transforming jose4j-0.9.5.jar (org.bitbucket.b_c:jose4j:0.9.5) with InstrumentationAnalysisTransform
+Transforming jose4j-0.9.5.jar (org.bitbucket.b_c:jose4j:0.9.5) with MergeInstrumentationAnalysisTransform
+Transforming slf4j-api-1.7.30.jar (org.slf4j:slf4j-api:1.7.30) with InstrumentationAnalysisTransform
+Transforming slf4j-api-1.7.30.jar (org.slf4j:slf4j-api:1.7.30) with MergeInstrumentationAnalysisTransform
+Transforming jdom2-2.0.6.jar (org.jdom:jdom2:2.0.6) with InstrumentationAnalysisTransform
+Transforming jdom2-2.0.6.jar (org.jdom:jdom2:2.0.6) with MergeInstrumentationAnalysisTransform
+Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with InstrumentationAnalysisTransform
+Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with MergeInstrumentationAnalysisTransform
+Transforming j2objc-annotations-2.8.jar (com.google.j2objc:j2objc-annotations:2.8) with InstrumentationAnalysisTransform
+Transforming j2objc-annotations-2.8.jar (com.google.j2objc:j2objc-annotations:2.8) with MergeInstrumentationAnalysisTransform
+Transforming annotations-4.1.1.4.jar (com.google.android:annotations:4.1.1.4) with InstrumentationAnalysisTransform
+Transforming annotations-4.1.1.4.jar (com.google.android:annotations:4.1.1.4) with MergeInstrumentationAnalysisTransform
+Transforming animal-sniffer-annotations-1.23.jar (org.codehaus.mojo:animal-sniffer-annotations:1.23) with InstrumentationAnalysisTransform
+Transforming animal-sniffer-annotations-1.23.jar (org.codehaus.mojo:animal-sniffer-annotations:1.23) with MergeInstrumentationAnalysisTransform
+Transforming perfmark-api-0.26.0.jar (io.perfmark:perfmark-api:0.26.0) with InstrumentationAnalysisTransform
+Transforming perfmark-api-0.26.0.jar (io.perfmark:perfmark-api:0.26.0) with MergeInstrumentationAnalysisTransform
+Transforming netty-codec-http2-4.1.93.Final.jar (io.netty:netty-codec-http2:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-http2-4.1.93.Final.jar (io.netty:netty-codec-http2:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-handler-proxy-4.1.93.Final.jar (io.netty:netty-handler-proxy:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-handler-proxy-4.1.93.Final.jar (io.netty:netty-handler-proxy:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-codec-http-4.1.93.Final.jar (io.netty:netty-codec-http:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-http-4.1.93.Final.jar (io.netty:netty-codec-http:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-handler-4.1.93.Final.jar (io.netty:netty-handler:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-handler-4.1.93.Final.jar (io.netty:netty-handler:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-transport-native-unix-common-4.1.93.Final.jar (io.netty:netty-transport-native-unix-common:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-transport-native-unix-common-4.1.93.Final.jar (io.netty:netty-transport-native-unix-common:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming checker-qual-3.33.0.jar (org.checkerframework:checker-qual:3.33.0) with InstrumentationAnalysisTransform
+Transforming checker-qual-3.33.0.jar (org.checkerframework:checker-qual:3.33.0) with MergeInstrumentationAnalysisTransform
+Transforming commons-codec-1.11.jar (commons-codec:commons-codec:1.11) with InstrumentationAnalysisTransform
+Transforming commons-codec-1.11.jar (commons-codec:commons-codec:1.11) with MergeInstrumentationAnalysisTransform
+Transforming apksig-8.7.3.jar (com.android.tools.build:apksig:8.7.3) with InstrumentationAnalysisTransform
+Transforming apksig-8.7.3.jar (com.android.tools.build:apksig:8.7.3) with MergeInstrumentationAnalysisTransform
+Transforming javawriter-2.5.0.jar (com.squareup:javawriter:2.5.0) with InstrumentationAnalysisTransform
+Transforming javawriter-2.5.0.jar (com.squareup:javawriter:2.5.0) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-annotations-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-gradle-plugin-annotations-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-native-utils-2.1.21.jar (org.jetbrains.kotlin:kotlin-native-utils:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-native-utils-2.1.21.jar (org.jetbrains.kotlin:kotlin-native-utils:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-tooling-core-2.1.21.jar (org.jetbrains.kotlin:kotlin-tooling-core:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-tooling-core-2.1.21.jar (org.jetbrains.kotlin:kotlin-tooling-core:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-build-tools-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-tools-api:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-build-tools-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-tools-api:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-util-klib-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib:2.1.21) with InstrumentationAnalysisTransform
+Transforming builder-8.7.3.jar (com.android.tools.build:builder:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-util-klib-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-util-io-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-io:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-util-io-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-io:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlin-daemon-client-2.1.21.jar (org.jetbrains.kotlin:kotlin-daemon-client:2.1.21) with InstrumentationAnalysisTransform
+Transforming kotlin-daemon-client-2.1.21.jar (org.jetbrains.kotlin:kotlin-daemon-client:2.1.21) with MergeInstrumentationAnalysisTransform
+Transforming kotlinx-coroutines-core-jvm-1.8.0.jar (org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0) with InstrumentationAnalysisTransform
+Transforming kotlinx-coroutines-core-jvm-1.8.0.jar (org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0) with MergeInstrumentationAnalysisTransform
+Transforming failureaccess-1.0.1.jar (com.google.guava:failureaccess:1.0.1) with InstrumentationAnalysisTransform
+Transforming failureaccess-1.0.1.jar (com.google.guava:failureaccess:1.0.1) with MergeInstrumentationAnalysisTransform
+Transforming listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava) with InstrumentationAnalysisTransform
+Transforming listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava) with MergeInstrumentationAnalysisTransform
+Transforming commons-logging-1.2.jar (commons-logging:commons-logging:1.2) with InstrumentationAnalysisTransform
+Transforming commons-logging-1.2.jar (commons-logging:commons-logging:1.2) with MergeInstrumentationAnalysisTransform
+Transforming jna-5.6.0.jar (net.java.dev.jna:jna:5.6.0) with InstrumentationAnalysisTransform
+Transforming jna-5.6.0.jar (net.java.dev.jna:jna:5.6.0) with MergeInstrumentationAnalysisTransform
+Transforming netty-codec-socks-4.1.93.Final.jar (io.netty:netty-codec-socks:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-socks-4.1.93.Final.jar (io.netty:netty-codec-socks:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-codec-4.1.93.Final.jar (io.netty:netty-codec:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-codec-4.1.93.Final.jar (io.netty:netty-codec:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-transport-4.1.93.Final.jar (io.netty:netty-transport:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-transport-4.1.93.Final.jar (io.netty:netty-transport:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-buffer-4.1.93.Final.jar (io.netty:netty-buffer:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-buffer-4.1.93.Final.jar (io.netty:netty-buffer:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-resolver-4.1.93.Final.jar (io.netty:netty-resolver:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-resolver-4.1.93.Final.jar (io.netty:netty-resolver:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming netty-common-4.1.93.Final.jar (io.netty:netty-common:4.1.93.Final) with InstrumentationAnalysisTransform
+Transforming netty-common-4.1.93.Final.jar (io.netty:netty-common:4.1.93.Final) with MergeInstrumentationAnalysisTransform
+Transforming manifest-merger-31.7.3.jar (com.android.tools.build:manifest-merger:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming sdk-common-31.7.3.jar (com.android.tools:sdk-common:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming sdklib-31.7.3.jar (com.android.tools:sdklib:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming aaptcompiler-8.7.3.jar (com.android.tools.build:aaptcompiler:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming tracker-31.7.3.jar (com.android.tools.analytics-library:tracker:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming repository-31.7.3.jar (com.android.tools:repository:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming databinding-compiler-common-8.7.3.jar (androidx.databinding:databinding-compiler-common:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming shared-31.7.3.jar (com.android.tools.analytics-library:shared:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-emulator-control-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-emulator-control-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-retention-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-retention-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming gradle-api-8.7.3.jar (com.android.tools.build:gradle-api:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming builder-model-8.7.3.jar (com.android.tools.build:builder-model:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming builder-test-api-8.7.3.jar (com.android.tools.build:builder-test-api:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming ddmlib-31.7.3.jar (com.android.tools.ddms:ddmlib:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming layoutlib-api-31.7.3.jar (com.android.tools.layoutlib:layoutlib-api:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming common-31.7.3.jar (com.android.tools:common:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming dvlib-31.7.3.jar (com.android.tools:dvlib:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-stdlib-jdk8-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jetifier-processor-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jetifier-core-1.0.0-beta10.jar (com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10) with ExternalDependencyInstrumentingArtifactTransform
+Transforming symbol-processing-gradle-plugin-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-gradle-plugin:2.1.21-2.0.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming symbol-processing-api-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-api:2.1.21-2.0.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming symbol-processing-common-deps-2.1.21-2.0.1.jar (com.google.devtools.ksp:symbol-processing-common-deps:2.1.21-2.0.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-stdlib-jdk7-1.9.20.jar (org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-reflect-2.0.20.jar (org.jetbrains.kotlin:kotlin-reflect:2.0.20) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-stdlib-2.0.20.jar (org.jetbrains.kotlin:kotlin-stdlib:2.0.20) with ExternalDependencyInstrumentingArtifactTransform
+Transforming annotations-13.0.jar (org.jetbrains:annotations:13.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming compose-gradle-plugin-1.8.2.jar (org.jetbrains.compose:compose-gradle-plugin:1.8.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-model-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-model:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming fus-statistics-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:fus-statistics-gradle-plugin:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-api-2.1.21-gradle85.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-api:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming compose-compiler-gradle-plugin-2.1.21-gradle85.jar (org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming bundletool-1.17.1.jar (com.android.tools.build:bundletool:1.17.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming aapt2-proto-8.7.3-12006047.jar (com.android.tools.build:aapt2-proto:8.7.3-12006047) with ExternalDependencyInstrumentingArtifactTransform
+Transforming crash-31.7.3.jar (com.android.tools.analytics-library:crash:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming lint-typedef-remover-31.7.3.jar (com.android.tools.lint:lint-typedef-remover:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming databinding-common-8.7.3.jar (androidx.databinding:databinding-common:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-device-provider-ddmlib-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-ddmlib-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-device-provider-profile-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-profile-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming baseLibrary-8.7.3.jar (com.android.databinding:baseLibrary:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-device-provider-gradle-proto-31.7.3.jar (com.android.tools.utp:android-device-provider-gradle-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-coverage-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-coverage-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-additional-test-output-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-additional-test-output-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-logcat-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-logcat-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-host-apk-installer-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-host-apk-installer-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming android-test-plugin-result-listener-gradle-proto-31.7.3.jar (com.android.tools.utp:android-test-plugin-result-listener-gradle-proto:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming transform-api-2.0.0-deprecated-use-gradle-api.jar (com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api) with ExternalDependencyInstrumentingArtifactTransform
+Transforming httpmime-4.5.6.jar (org.apache.httpcomponents:httpmime:4.5.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming commons-io-2.13.0.jar (commons-io:commons-io:2.13.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming asm-commons-9.6.jar (org.ow2.asm:asm-commons:9.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming asm-util-9.6.jar (org.ow2.asm:asm-util:9.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming asm-analysis-9.6.jar (org.ow2.asm:asm-analysis:9.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming asm-9.6.jar (org.ow2.asm:asm:9.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming asm-tree-9.6.jar (org.ow2.asm:asm-tree:9.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming apkzlib-8.7.3.jar (com.android.tools.build:apkzlib:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming bcpkix-jdk18on-1.77.jar (org.bouncycastle:bcpkix-jdk18on:1.77) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jaxb-runtime-2.3.2.jar (org.glassfish.jaxb:jaxb-runtime:2.3.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jopt-simple-4.9.jar (net.sf.jopt-simple:jopt-simple:4.9) with ExternalDependencyInstrumentingArtifactTransform
+Transforming javapoet-1.10.0.jar (com.squareup:javapoet:1.10.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming protobuf-java-util-3.22.3.jar (com.google.protobuf:protobuf-java-util:3.22.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-protobuf-1.57.0.jar (io.grpc:grpc-protobuf:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming tink-1.7.0.jar (com.google.crypto.tink:tink:1.7.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming protos-31.7.3.jar (com.android.tools.analytics-library:protos:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming protobuf-java-3.22.3.jar (com.google.protobuf:protobuf-java:3.22.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming proto-google-common-protos-2.17.0.jar (com.google.api.grpc:proto-google-common-protos:2.17.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-netty-1.57.0.jar (io.grpc:grpc-netty:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-core-1.57.0.jar (io.grpc:grpc-core:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-build-statistics-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-statistics:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-stub-1.57.0.jar (io.grpc:grpc-stub:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming gson-2.11.0.jar (com.google.code.gson:gson:2.11.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming core-proto-0.0.9-alpha02.jar (com.google.testing.platform:core-proto:0.0.9-alpha02) with ExternalDependencyInstrumentingArtifactTransform
+Transforming tensorflow-lite-metadata-0.1.0-rc2.jar (org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming flatbuffers-java-1.12.0.jar (com.google.flatbuffers:flatbuffers-java:1.12.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-idea-proto-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea-proto:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-idea-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-idea:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-klib-commonizer-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-klib-commonizer-api:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-util-klib-metadata-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib-metadata:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-compiler-runner-2.1.21.jar (org.jetbrains.kotlin:kotlin-compiler-runner:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-context-1.57.0.jar (io.grpc:grpc-context:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jimfs-1.1.jar (com.google.jimfs:jimfs:1.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-protobuf-lite-1.57.0.jar (io.grpc:grpc-protobuf-lite:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming grpc-api-1.57.0.jar (io.grpc:grpc-api:1.57.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming guava-32.0.1-jre.jar (com.google.guava:guava:32.0.1-jre) with ExternalDependencyInstrumentingArtifactTransform
+Transforming dagger-2.28.3.jar (com.google.dagger:dagger:2.28.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kxml2-2.3.0.jar (net.sf.kxml:kxml2:2.3.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming bcutil-jdk18on-1.77.jar (org.bouncycastle:bcutil-jdk18on:1.77) with ExternalDependencyInstrumentingArtifactTransform
+Transforming javax.inject-1.jar (javax.inject:javax.inject:1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming bcprov-jdk18on-1.77.jar (org.bouncycastle:bcprov-jdk18on:1.77) with ExternalDependencyInstrumentingArtifactTransform
+Transforming trove4j-1.0.20200330.jar (org.jetbrains.intellij.deps:trove4j:1.0.20200330) with ExternalDependencyInstrumentingArtifactTransform
+Transforming commons-compress-1.21.jar (org.apache.commons:commons-compress:1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming httpclient-4.5.14.jar (org.apache.httpcomponents:httpclient:4.5.14) with ExternalDependencyInstrumentingArtifactTransform
+Transforming signflinger-8.7.3.jar (com.android:signflinger:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming javax.activation-1.2.0.jar (com.sun.activation:javax.activation:1.2.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming httpcore-4.4.16.jar (org.apache.httpcomponents:httpcore:4.4.16) with ExternalDependencyInstrumentingArtifactTransform
+Transforming annotations-31.7.3.jar (com.android.tools:annotations:31.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming zipflinger-8.7.3.jar (com.android:zipflinger:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jna-platform-5.6.0.jar (net.java.dev.jna:jna-platform:5.6.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming javax.annotation-api-1.3.2.jar (javax.annotation:javax.annotation-api:1.3.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming juniversalchardet-1.0.3.jar (com.googlecode.juniversalchardet:juniversalchardet:1.0.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming stax-ex-1.8.1.jar (org.jvnet.staxex:stax-ex:1.8.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jakarta.xml.bind-api-2.3.2.jar (jakarta.xml.bind:jakarta.xml.bind-api:2.3.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming txw2-2.3.2.jar (org.glassfish.jaxb:txw2:2.3.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming istack-commons-runtime-3.0.8.jar (com.sun.istack:istack-commons-runtime:3.0.8) with ExternalDependencyInstrumentingArtifactTransform
+Transforming FastInfoset-1.2.16.jar (com.sun.xml.fastinfoset:FastInfoset:1.2.16) with ExternalDependencyInstrumentingArtifactTransform
+Transforming auto-value-annotations-1.6.2.jar (com.google.auto.value:auto-value-annotations:1.6.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jakarta.activation-api-1.2.1.jar (jakarta.activation:jakarta.activation-api:1.2.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming error_prone_annotations-2.27.0.jar (com.google.errorprone:error_prone_annotations:2.27.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jose4j-0.9.5.jar (org.bitbucket.b_c:jose4j:0.9.5) with ExternalDependencyInstrumentingArtifactTransform
+Transforming slf4j-api-1.7.30.jar (org.slf4j:slf4j-api:1.7.30) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jdom2-2.0.6.jar (org.jdom:jdom2:2.0.6) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jsr305-3.0.2.jar (com.google.code.findbugs:jsr305:3.0.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming j2objc-annotations-2.8.jar (com.google.j2objc:j2objc-annotations:2.8) with ExternalDependencyInstrumentingArtifactTransform
+Transforming annotations-4.1.1.4.jar (com.google.android:annotations:4.1.1.4) with ExternalDependencyInstrumentingArtifactTransform
+Transforming animal-sniffer-annotations-1.23.jar (org.codehaus.mojo:animal-sniffer-annotations:1.23) with ExternalDependencyInstrumentingArtifactTransform
+Transforming perfmark-api-0.26.0.jar (io.perfmark:perfmark-api:0.26.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-codec-http2-4.1.93.Final.jar (io.netty:netty-codec-http2:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-codec-http-4.1.93.Final.jar (io.netty:netty-codec-http:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-handler-proxy-4.1.93.Final.jar (io.netty:netty-handler-proxy:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-handler-4.1.93.Final.jar (io.netty:netty-handler:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-transport-native-unix-common-4.1.93.Final.jar (io.netty:netty-transport-native-unix-common:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming commons-codec-1.11.jar (commons-codec:commons-codec:1.11) with ExternalDependencyInstrumentingArtifactTransform
+Transforming checker-qual-3.33.0.jar (org.checkerframework:checker-qual:3.33.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming apksig-8.7.3.jar (com.android.tools.build:apksig:8.7.3) with ExternalDependencyInstrumentingArtifactTransform
+Transforming javawriter-2.5.0.jar (com.squareup:javawriter:2.5.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-gradle-plugin-annotations-2.1.21.jar (org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-native-utils-2.1.21.jar (org.jetbrains.kotlin:kotlin-native-utils:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-tooling-core-2.1.21.jar (org.jetbrains.kotlin:kotlin-tooling-core:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-build-tools-api-2.1.21.jar (org.jetbrains.kotlin:kotlin-build-tools-api:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-util-klib-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-klib:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-util-io-2.1.21.jar (org.jetbrains.kotlin:kotlin-util-io:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlin-daemon-client-2.1.21.jar (org.jetbrains.kotlin:kotlin-daemon-client:2.1.21) with ExternalDependencyInstrumentingArtifactTransform
+Transforming kotlinx-coroutines-core-jvm-1.8.0.jar (org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming failureaccess-1.0.1.jar (com.google.guava:failureaccess:1.0.1) with ExternalDependencyInstrumentingArtifactTransform
+Transforming listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava) with ExternalDependencyInstrumentingArtifactTransform
+Transforming commons-logging-1.2.jar (commons-logging:commons-logging:1.2) with ExternalDependencyInstrumentingArtifactTransform
+Transforming jna-5.6.0.jar (net.java.dev.jna:jna:5.6.0) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-codec-socks-4.1.93.Final.jar (io.netty:netty-codec-socks:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-codec-4.1.93.Final.jar (io.netty:netty-codec:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-transport-4.1.93.Final.jar (io.netty:netty-transport:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-buffer-4.1.93.Final.jar (io.netty:netty-buffer:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-resolver-4.1.93.Final.jar (io.netty:netty-resolver:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+Transforming netty-common-4.1.93.Final.jar (io.netty:netty-common:4.1.93.Final) with ExternalDependencyInstrumentingArtifactTransform
+
+> Configure project :composeApp
+Evaluating project ':composeApp' using build file '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build.gradle.kts'.
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage1) is 9338e6b39f7ee139958a1630df49b15a
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage1) with cache key 9338e6b39f7ee139958a1630df49b15a
+Build 8de58304-cd4c-4ece-a693-6580ecccd1ed is started
+Using Kotlin Gradle Plugin gradle85 variant
+Using default execution profile
+Configure multi-module compose resources
+Configure compose resources generation
+Configure 'map(provider(?))' class generation for commonMain
+Configure resource accessors generation for commonMain
+Configure resource accessors generation for commonTest
+Configure expect resource collectors generation for commonMain
+Configure compose resources with AndroidComponentsExtension
+Build cache key for Kotlin DSL script compilation (Project/TopLevel/stage2) is 982e53eb0e26134a26111df5601b2af4
+Stored cache entry for Kotlin DSL script compilation (Project/TopLevel/stage2) with cache key 982e53eb0e26134a26111df5601b2af4
+Configure resource accessors generation for androidInstrumentedTest
+Configure resource accessors generation for androidMain
+Configure resource accessors generation for androidUnitTest
+Configure actual resource collectors generation for androidMain
+Configure resource accessors generation for desktopMain
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+Configure resource accessors generation for desktopTest
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+Configure actual resource collectors generation for desktopMain
+Configure main resources for 'desktop' target
+Configure test resources for 'desktop' target
+Configure debug resources for 'android' target
+Configure debugAndroidTest resources for 'android' target
+Configure release resources for 'android' target
+Configure resource accessors generation for androidInstrumentedTestDebug
+Configure resource accessors generation for androidUnitTestDebug
+Configure resource accessors generation for androidDebug
+Configure resource accessors generation for androidUnitTestRelease
+Configure resource accessors generation for androidRelease
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Check that new 'org.jetbrains.kotlin.plugin.compose' was applied
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+All projects evaluated.
+Task path ':composeApp:desktopTest' matched project ':composeApp'
+Task name matched 'desktopTest'
+Selected primary task 'desktopTest' from project :composeApp
+Tasks to be executed: [task ':composeApp:checkKotlinGradlePluginConfigurationErrors', task ':composeApp:convertXmlValueResourcesForCommonMain', task ':composeApp:copyNonXmlValueResourcesForCommonMain', task ':composeApp:prepareComposeResourcesTaskForCommonMain', task ':composeApp:generateResourceAccessorsForCommonMain', task ':composeApp:convertXmlValueResourcesForDesktopMain', task ':composeApp:copyNonXmlValueResourcesForDesktopMain', task ':composeApp:prepareComposeResourcesTaskForDesktopMain', task ':composeApp:generateResourceAccessorsForDesktopMain', task ':composeApp:generateActualResourceCollectorsForDesktopMain', task ':composeApp:generateComposeResClass', task ':composeApp:generateExpectResourceCollectorsForCommonMain', task ':composeApp:kspKotlinDesktop', task ':composeApp:compileKotlinDesktop', task ':composeApp:copyRoomSchemas', task ':composeApp:compileDesktopMainJava', task ':composeApp:assembleDesktopMainResources', task ':composeApp:desktopProcessResources', task ':composeApp:processDesktopMainResources', task ':composeApp:desktopMainClasses', task ':composeApp:desktopJar', task ':composeApp:convertXmlValueResourcesForCommonTest', task ':composeApp:copyNonXmlValueResourcesForCommonTest', task ':composeApp:prepareComposeResourcesTaskForCommonTest', task ':composeApp:generateResourceAccessorsForCommonTest', task ':composeApp:convertXmlValueResourcesForDesktopTest', task ':composeApp:copyNonXmlValueResourcesForDesktopTest', task ':composeApp:prepareComposeResourcesTaskForDesktopTest', task ':composeApp:generateResourceAccessorsForDesktopTest', task ':composeApp:compileTestKotlinDesktop', task ':composeApp:compileDesktopTestJava', task ':composeApp:assembleDesktopTestResources', task ':composeApp:desktopTestProcessResources', task ':composeApp:processDesktopTestResources', task ':composeApp:desktopTestClasses', task ':composeApp:desktopTest']
+Tasks that were excluded: []
+Resolve mutations for :composeApp:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+:composeApp:checkKotlinGradlePluginConfigurationErrors (Thread[included builds,5,main]) started.
+
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':composeApp:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :composeApp:convertXmlValueResourcesForCommonMain (Thread[included builds,5,main]) started.
+:composeApp:convertXmlValueResourcesForCommonMain (Thread[included builds,5,main]) started.
+
+> Task :composeApp:convertXmlValueResourcesForCommonMain NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonMain/composeResources', not found
+Skipping task ':composeApp:convertXmlValueResourcesForCommonMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:copyNonXmlValueResourcesForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:copyNonXmlValueResourcesForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonMain/composeResources', not found
+Skipping task ':composeApp:copyNonXmlValueResourcesForCommonMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:prepareComposeResourcesTaskForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:prepareComposeResourcesTaskForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+Skipping task ':composeApp:prepareComposeResourcesTaskForCommonMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:generateResourceAccessorsForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:generateResourceAccessorsForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:generateResourceAccessorsForCommonMain SKIPPED
+Skipping task ':composeApp:generateResourceAccessorsForCommonMain' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:convertXmlValueResourcesForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:convertXmlValueResourcesForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:convertXmlValueResourcesForDesktopMain NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopMain/composeResources', not found
+Skipping task ':composeApp:convertXmlValueResourcesForDesktopMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:copyNonXmlValueResourcesForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:copyNonXmlValueResourcesForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopMain/composeResources', not found
+Skipping task ':composeApp:copyNonXmlValueResourcesForDesktopMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:prepareComposeResourcesTaskForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:prepareComposeResourcesTaskForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+Skipping task ':composeApp:prepareComposeResourcesTaskForDesktopMain' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:generateResourceAccessorsForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:generateResourceAccessorsForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:generateResourceAccessorsForDesktopMain SKIPPED
+Skipping task ':composeApp:generateResourceAccessorsForDesktopMain' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:generateActualResourceCollectorsForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:generateActualResourceCollectorsForDesktopMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:generateActualResourceCollectorsForDesktopMain SKIPPED
+Skipping task ':composeApp:generateActualResourceCollectorsForDesktopMain' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:generateComposeResClass (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:generateComposeResClass (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:generateComposeResClass SKIPPED
+Skipping task ':composeApp:generateComposeResClass' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:generateExpectResourceCollectorsForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:generateExpectResourceCollectorsForCommonMain (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain SKIPPED
+Skipping task ':composeApp:generateExpectResourceCollectorsForCommonMain' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:kspKotlinDesktop (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:kspKotlinDesktop (Thread[Execution worker,5,main]) started.
+
+> Task :composeApp:kspKotlinDesktop
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop-jvm-linux-x64/1.8.2/desktop-jvm-linux-x64-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download11658949469115500692bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-swing/1.10.2/kotlinx-coroutines-swing-1.10.2.pom to /home/runner/.gradle/.tmp/gradle_download6937884664489716399bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-swing/1.10.2/kotlinx-coroutines-swing-1.10.2.module to /home/runner/.gradle/.tmp/gradle_download6455636751442106917bin
+Downloading https://repo.maven.apache.org/maven2/com/microsoft/onnxruntime/onnxruntime/1.20.0/onnxruntime-1.20.0.pom to /home/runner/.gradle/.tmp/gradle_download386110265034523823bin
+Resource missing. [HTTP GET: https://repo.maven.apache.org/maven2/com/microsoft/onnxruntime/onnxruntime/1.20.0/onnxruntime-1.20.0.module]
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/3.0.3/pdfbox-3.0.3.pom to /home/runner/.gradle/.tmp/gradle_download1718282885935572855bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-parent/3.0.3/pdfbox-parent-3.0.3.pom to /home/runner/.gradle/.tmp/gradle_download7731263834582828120bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/apache/32/apache-32.pom to /home/runner/.gradle/.tmp/gradle_download1312216105141713301bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-desktop/1.8.2/runtime-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download8258786520264760552bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-desktop/1.8.2/runtime-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download11498237860447272624bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-desktop/1.8.2/foundation-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download4167780620241180622bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-desktop/1.8.2/foundation-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download17454561545846950626bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material3/material3-desktop/1.8.2/material3-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download13352426751552782889bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material3/material3-desktop/1.8.2/material3-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download9122221841932990492bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-desktop/1.8.2/ui-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download2089381941762354204bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-desktop/1.8.2/ui-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download12534127795792436550bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/room/room-runtime-jvm/2.7.1/room-runtime-jvm-2.7.1.pom to /home/runner/.gradle/.tmp/gradle_download12697528351269707452bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/room/room-runtime-jvm/2.7.1/room-runtime-jvm-2.7.1.module to /home/runner/.gradle/.tmp/gradle_download12018067987628779155bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-bundled-jvm/2.5.1/sqlite-bundled-jvm-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download17280585943508153512bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-bundled-jvm/2.5.1/sqlite-bundled-jvm-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download1742708658871066391bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop/1.8.2/desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download1312969681131864450bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop/1.8.2/desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download525400867827958645bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-io/3.0.3/pdfbox-io-3.0.3.pom to /home/runner/.gradle/.tmp/gradle_download16919506204616856784bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/3.0.3/fontbox-3.0.3.pom to /home/runner/.gradle/.tmp/gradle_download17499052412864597351bin
+Downloading https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.3.3/commons-logging-1.3.3.pom to /home/runner/.gradle/.tmp/gradle_download17750263081752791680bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/71/commons-parent-71.pom to /home/runner/.gradle/.tmp/gradle_download10769159209585321049bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.0-M2/junit-bom-5.11.0-M2.pom to /home/runner/.gradle/.tmp/gradle_download18309815067307944294bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.0-M2/junit-bom-5.11.0-M2.module to /home/runner/.gradle/.tmp/gradle_download15391368716023266000bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko/0.9.4.2/skiko-0.9.4.2.pom to /home/runner/.gradle/.tmp/gradle_download7799914852450632010bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko/0.9.4.2/skiko-0.9.4.2.module to /home/runner/.gradle/.tmp/gradle_download7787642755868257683bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.4.2/collection-1.4.2.pom to /home/runner/.gradle/.tmp/gradle_download14844934045541964663bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.4.2/collection-1.4.2.module to /home/runner/.gradle/.tmp/gradle_download11436257340287879970bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.8.1/annotation-1.8.1.pom to /home/runner/.gradle/.tmp/gradle_download12541333518369902078bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.8.1/annotation-1.8.1.module to /home/runner/.gradle/.tmp/gradle_download13579799158660927707bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop-jvm/1.8.2/desktop-jvm-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download17591176580454401961bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop-jvm/1.8.2/desktop-jvm-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download13965713492917447432bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-desktop/1.8.2/animation-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download3226726775973890833bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-desktop/1.8.2/animation-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download5352749256874404605bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko-awt/0.9.4.2/skiko-awt-0.9.4.2.pom to /home/runner/.gradle/.tmp/gradle_download11002392963806536632bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko-awt/0.9.4.2/skiko-awt-0.9.4.2.module to /home/runner/.gradle/.tmp/gradle_download10999432414348502964bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-ripple-desktop/1.8.2/material-ripple-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download382424260700060611bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-ripple-desktop/1.8.2/material-ripple-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download16644074309319991540bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-graphics-desktop/1.8.2/ui-graphics-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download18377451035984619578bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-graphics-desktop/1.8.2/ui-graphics-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download4625767694183294098bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-text-desktop/1.8.2/ui-text-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download11269293686244473669bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-text-desktop/1.8.2/ui-text-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download15592428272877357263bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/annotation-internal/annotation/1.6.11/annotation-1.6.11.pom to /home/runner/.gradle/.tmp/gradle_download15860699069389281129bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/annotation-internal/annotation/1.6.11/annotation-1.6.11.module to /home/runner/.gradle/.tmp/gradle_download1057539786342870144bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-saveable-desktop/1.8.2/runtime-saveable-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download14858379885324747757bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-saveable-desktop/1.8.2/runtime-saveable-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download18095179513897312718bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-geometry-desktop/1.8.2/ui-geometry-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download10549965971752577977bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-geometry-desktop/1.8.2/ui-geometry-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download10868759258958785763bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-unit-desktop/1.8.2/ui-unit-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download3433009898461799688bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-unit-desktop/1.8.2/ui-unit-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download3988051531597838714bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-util-desktop/1.8.2/ui-util-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download11739915228815913967bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-util-desktop/1.8.2/ui-util-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download4463259077610685895bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.8.1/annotation-jvm-1.8.1.pom to /home/runner/.gradle/.tmp/gradle_download847443296720247352bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.8.1/annotation-jvm-1.8.1.module to /home/runner/.gradle/.tmp/gradle_download9772569729132579406bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.2/collection-jvm-1.4.2.pom to /home/runner/.gradle/.tmp/gradle_download17710493800259247933bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.2/collection-jvm-1.4.2.module to /home/runner/.gradle/.tmp/gradle_download9585348124781092189bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-jvm/2.5.1/sqlite-jvm-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download6045445150943543048bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-jvm/2.5.1/sqlite-jvm-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download11027327323895116045bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material/1.8.2/material-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download10036873852774362442bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material/1.8.2/material-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download7768141278327112741bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-tooling-preview/1.8.2/ui-tooling-preview-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download15551525653496977030bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-tooling-preview/1.8.2/ui-tooling-preview-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download3077744422832074300bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-desktop/1.8.2/material-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download8565642229470315332bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-desktop/1.8.2/material-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download9760203225220882084bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-tooling-preview-desktop/1.8.2/ui-tooling-preview-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download10822843681483248207bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-tooling-preview-desktop/1.8.2/ui-tooling-preview-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download4403937456204721780bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-core-desktop/1.8.2/animation-core-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download4155204442908633519bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-core-desktop/1.8.2/animation-core-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download1293840126391477267bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-layout-desktop/1.8.2/foundation-layout-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download4517772160367420194bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-layout-desktop/1.8.2/foundation-layout-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download14464327166036575850bin
+Resource missing. [HTTP HEAD: https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop-jvm-linux-x64/1.8.2/desktop-jvm-linux-x64-1.8.2.jar]
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-ripple-desktop/1.8.2/material-ripple-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download12268581883826013661bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material/material-desktop/1.8.2/material-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download113242382416191397bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/desktop/desktop-jvm/1.8.2/desktop-jvm-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download16495001889050294157bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/material3/material3-desktop/1.8.2/material3-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download3703072295736117715bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-desktop/1.8.2/foundation-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download5182666953368870277bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-desktop/1.8.2/animation-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download2754228556733867114bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/foundation/foundation-layout-desktop/1.8.2/foundation-layout-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download13221866839645118536bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-desktop/1.8.2/ui-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download9810188435797791575bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-saveable-desktop/1.8.2/runtime-saveable-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download6331052480688530539bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-tooling-preview-desktop/1.8.2/ui-tooling-preview-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download9678634725368325130bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/runtime/runtime-desktop/1.8.2/runtime-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download18307555324858133366bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/animation/animation-core-desktop/1.8.2/animation-core-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download9207010645756792603bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common-jvm/2.8.5/lifecycle-common-jvm-2.8.5.jar to /home/runner/.gradle/.tmp/gradle_download6598259789445106640bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/room/room-runtime-jvm/2.7.1/room-runtime-jvm-2.7.1.jar to /home/runner/.gradle/.tmp/gradle_download3990116944147651447bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-swing/1.10.2/kotlinx-coroutines-swing-1.10.2.jar to /home/runner/.gradle/.tmp/gradle_download10740730563534081670bin
+Downloading https://repo.maven.apache.org/maven2/com/microsoft/onnxruntime/onnxruntime/1.20.0/onnxruntime-1.20.0.jar to /home/runner/.gradle/.tmp/gradle_download2459614144967827085bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection-jvm/1.4.2/collection-jvm-1.4.2.jar to /home/runner/.gradle/.tmp/gradle_download10886924875418553765bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-jvm/2.5.1/sqlite-jvm-2.5.1.jar to /home/runner/.gradle/.tmp/gradle_download11301194121763345481bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox/3.0.3/pdfbox-3.0.3.jar to /home/runner/.gradle/.tmp/gradle_download6895486875227653047bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/fontbox/3.0.3/fontbox-3.0.3.jar to /home/runner/.gradle/.tmp/gradle_download1724689376210834414bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/pdfbox/pdfbox-io/3.0.3/pdfbox-io-3.0.3.jar to /home/runner/.gradle/.tmp/gradle_download16693859549576253476bin
+Downloading https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.3.3/commons-logging-1.3.3.jar to /home/runner/.gradle/.tmp/gradle_download16687696471810336225bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/sqlite/sqlite-bundled-jvm/2.5.1/sqlite-bundled-jvm-2.5.1.jar to /home/runner/.gradle/.tmp/gradle_download16388340501882007089bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-graphics-desktop/1.8.2/ui-graphics-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download847814082191613706bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-unit-desktop/1.8.2/ui-unit-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download2238345353607352183bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko-awt/0.9.4.2/skiko-awt-0.9.4.2.jar to /home/runner/.gradle/.tmp/gradle_download12606887635589560062bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-geometry-desktop/1.8.2/ui-geometry-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download13825645094621665480bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-util-desktop/1.8.2/ui-util-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download2768720785441420323bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-text-desktop/1.8.2/ui-text-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download4459392292687626286bin
+Transforming material3-desktop-1.8.2.jar with StructureTransformAction
+Transforming desktop-jvm-1.8.2.jar with StructureTransformAction
+Transforming material-desktop-1.8.2.jar with StructureTransformAction
+Transforming material-ripple-desktop-1.8.2.jar with StructureTransformAction
+Transforming foundation-desktop-1.8.2.jar with StructureTransformAction
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.desktop/desktop-jvm/1.8.2/61be96a019ac35e8751b08b33856344a24586648/desktop-jvm-1.8.2.jar is d8b8ba645c904d7e98a98f6789fc858f
+Transforming animation-desktop-1.8.2.jar with StructureTransformAction
+Transforming foundation-layout-desktop-1.8.2.jar with StructureTransformAction
+Transforming ui-desktop-1.8.2.jar with StructureTransformAction
+Transforming runtime-saveable-desktop-1.8.2.jar with StructureTransformAction
+Transforming ui-tooling-preview-desktop-1.8.2.jar with StructureTransformAction
+Transforming runtime-desktop-1.8.2.jar with StructureTransformAction
+Transforming room-common-jvm-2.7.1.jar with StructureTransformAction
+Transforming room-runtime-jvm-2.7.1.jar with StructureTransformAction
+Transforming lifecycle-common-jvm-2.8.5.jar with StructureTransformAction
+Transforming animation-core-desktop-1.8.2.jar with StructureTransformAction
+Transforming kotlinx-coroutines-core-jvm-1.10.2.jar with StructureTransformAction
+Transforming kotlinx-coroutines-swing-1.10.2.jar with StructureTransformAction
+Transforming collection-jvm-1.4.2.jar with StructureTransformAction
+Transforming sqlite-bundled-jvm-2.5.1.jar with StructureTransformAction
+Transforming sqlite-jvm-2.5.1.jar with StructureTransformAction
+Transforming annotation-jvm-1.9.1.jar with StructureTransformAction
+Transforming kotlin-stdlib-2.1.21.jar with StructureTransformAction
+Transforming onnxruntime-1.20.0.jar with StructureTransformAction
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-desktop/1.8.2/7aae6f749a060718d931957a27d495f26b2d4f37/material-desktop-1.8.2.jar is 4b3b72c2306b13eb72b5c589c8eed3eb
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.desktop/desktop-jvm/1.8.2/61be96a019ac35e8751b08b33856344a24586648/desktop-jvm-1.8.2.jar with cache key d8b8ba645c904d7e98a98f6789fc858f
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-ripple-desktop/1.8.2/5c9c96a95930f802de1b611fb610db4a0eff49cf/material-ripple-desktop-1.8.2.jar is 508a6bb216cc7f50087a932bfb4003dd
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-desktop/1.8.2/1f1f838506ceb2c25499517559f120517770b014/material3-desktop-1.8.2.jar is 78e714cb95928b6c52f81c5751105757
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-desktop/1.8.2/7aae6f749a060718d931957a27d495f26b2d4f37/material-desktop-1.8.2.jar with cache key 4b3b72c2306b13eb72b5c589c8eed3eb
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-desktop/1.8.2/a251fa6042a2647206fb47795485a1ad07a69dd6/foundation-desktop-1.8.2.jar is f42a543d972bf86e23d48cc9b045d683
+Transforming pdfbox-3.0.3.jar with StructureTransformAction
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-ripple-desktop/1.8.2/5c9c96a95930f802de1b611fb610db4a0eff49cf/material-ripple-desktop-1.8.2.jar with cache key 508a6bb216cc7f50087a932bfb4003dd
+Transforming annotations-23.0.0.jar with StructureTransformAction
+Transforming fontbox-3.0.3.jar with StructureTransformAction
+Transforming pdfbox-io-3.0.3.jar with StructureTransformAction
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-desktop/1.8.2/84109f752086843a85325f8aeffa2302b312c948/animation-desktop-1.8.2.jar is 95886a8c3952e9f935e303c04de38557
+Transforming commons-logging-1.3.3.jar with StructureTransformAction
+Transforming ui-text-desktop-1.8.2.jar with StructureTransformAction
+Transforming ui-graphics-desktop-1.8.2.jar with StructureTransformAction
+Transforming ui-unit-desktop-1.8.2.jar with StructureTransformAction
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-desktop/1.8.2/1f1f838506ceb2c25499517559f120517770b014/material3-desktop-1.8.2.jar with cache key 78e714cb95928b6c52f81c5751105757
+Transforming skiko-awt-0.9.4.2.jar with StructureTransformAction
+Transforming ui-geometry-desktop-1.8.2.jar with StructureTransformAction
+Transforming ui-util-desktop-1.8.2.jar with StructureTransformAction
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-desktop/1.8.2/84109f752086843a85325f8aeffa2302b312c948/animation-desktop-1.8.2.jar with cache key 95886a8c3952e9f935e303c04de38557
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-saveable-desktop/1.8.2/952c9bfa714b76d73d2cd872ced4d3b58a7dc7c/runtime-saveable-desktop-1.8.2.jar is 61eb7037b0cd6ca52372cdb083a5ac5e
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-saveable-desktop/1.8.2/952c9bfa714b76d73d2cd872ced4d3b58a7dc7c/runtime-saveable-desktop-1.8.2.jar with cache key 61eb7037b0cd6ca52372cdb083a5ac5e
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-tooling-preview-desktop/1.8.2/7e1d509da90394d063aef5b444bf218024b13250/ui-tooling-preview-desktop-1.8.2.jar is f0c0bfee29e6aee4227612d3f2df9ba2
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-layout-desktop/1.8.2/726fa1c81f73f76e89383ada6d9b61fc71bcf07c/foundation-layout-desktop-1.8.2.jar is eb05d36dae5013065f24c0264266544e
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-tooling-preview-desktop/1.8.2/7e1d509da90394d063aef5b444bf218024b13250/ui-tooling-preview-desktop-1.8.2.jar with cache key f0c0bfee29e6aee4227612d3f2df9ba2
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-desktop/1.8.2/a251fa6042a2647206fb47795485a1ad07a69dd6/foundation-desktop-1.8.2.jar with cache key f42a543d972bf86e23d48cc9b045d683
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-desktop/1.8.2/7a1668d4c5899a12dae59f4ecc805c3179333538/runtime-desktop-1.8.2.jar is aca735aa304863722d5635d12e11c837
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.room/room-runtime-jvm/2.7.1/f74e87c9fb813a2964c2c73087d1511d8dac4c85/room-runtime-jvm-2.7.1.jar is 19f9a9ea9df3ff6deb8c1f4a991da446
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-layout-desktop/1.8.2/726fa1c81f73f76e89383ada6d9b61fc71bcf07c/foundation-layout-desktop-1.8.2.jar with cache key eb05d36dae5013065f24c0264266544e
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common-jvm/2.8.5/7174a594afb73a9ad9ac9074ce78b94af3cc52a7/lifecycle-common-jvm-2.8.5.jar is 4116238c4a4e04f1cf097a08f0ce5697
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common-jvm/2.8.5/7174a594afb73a9ad9ac9074ce78b94af3cc52a7/lifecycle-common-jvm-2.8.5.jar with cache key 4116238c4a4e04f1cf097a08f0ce5697
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.room/room-runtime-jvm/2.7.1/f74e87c9fb813a2964c2c73087d1511d8dac4c85/room-runtime-jvm-2.7.1.jar with cache key 19f9a9ea9df3ff6deb8c1f4a991da446
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-swing/1.10.2/ccb5a2e7c83fa76da0ba4677f05678d3bd3eed57/kotlinx-coroutines-swing-1.10.2.jar is e25fba7465aee9dcc70ef701eb26397c
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-core-desktop/1.8.2/ff4a236b5e86b2e12449ae75755048d1a2a99102/animation-core-desktop-1.8.2.jar is 153fc83103a1c70498ef12a8e7b72e81
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-swing/1.10.2/ccb5a2e7c83fa76da0ba4677f05678d3bd3eed57/kotlinx-coroutines-swing-1.10.2.jar with cache key e25fba7465aee9dcc70ef701eb26397c
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-desktop/1.8.2/7a1668d4c5899a12dae59f4ecc805c3179333538/runtime-desktop-1.8.2.jar with cache key aca735aa304863722d5635d12e11c837
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-desktop/1.8.2/703540d8fb0705482a06efcf765dcf8f2c1860ab/ui-desktop-1.8.2.jar is f939c2fbcdd6f21cbaf5691724e2cbf5
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.2/bc60b5568a66d765a9fe8e266fd0c6c727e0b50b/collection-jvm-1.4.2.jar is 896dddee08d6fc0e8ec50b3db4f3a1a4
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-core-desktop/1.8.2/ff4a236b5e86b2e12449ae75755048d1a2a99102/animation-core-desktop-1.8.2.jar with cache key 153fc83103a1c70498ef12a8e7b72e81
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-jvm/2.5.1/c25fd66c89fa5c47439c155c72935cd1e2ba4591/sqlite-jvm-2.5.1.jar is bee2e2835215c8bfd80c666d25031d41
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.2/bc60b5568a66d765a9fe8e266fd0c6c727e0b50b/collection-jvm-1.4.2.jar with cache key 896dddee08d6fc0e8ec50b3db4f3a1a4
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-jvm/2.5.1/c25fd66c89fa5c47439c155c72935cd1e2ba4591/sqlite-jvm-2.5.1.jar with cache key bee2e2835215c8bfd80c666d25031d41
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-bundled-jvm/2.5.1/20c1158896f81d922540ada1df000c08052d135e/sqlite-bundled-jvm-2.5.1.jar is 5163d8f29a54060c27d8f48411b53fc8
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-bundled-jvm/2.5.1/20c1158896f81d922540ada1df000c08052d135e/sqlite-bundled-jvm-2.5.1.jar with cache key 5163d8f29a54060c27d8f48411b53fc8
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/3.0.3/a739bfc1b72d2f98d973cd1419f5ae2decd36068/pdfbox-3.0.3.jar is 4dd8f8f5122794dcb3f0a6c88e65a8ce
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/3.0.3/9eebd1ee868a79fcf7390283b2baf4179dadb8ed/fontbox-3.0.3.jar is 804556d30ddb8283aeeaf117718be071
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/3.0.3/9eebd1ee868a79fcf7390283b2baf4179dadb8ed/fontbox-3.0.3.jar with cache key 804556d30ddb8283aeeaf117718be071
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox-io/3.0.3/c40dcf555b72b1d8c0cd19391d63e5b58382b9cb/pdfbox-io-3.0.3.jar is 7897a502295fcfdcc884be4d9068248d
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox-io/3.0.3/c40dcf555b72b1d8c0cd19391d63e5b58382b9cb/pdfbox-io-3.0.3.jar with cache key 7897a502295fcfdcc884be4d9068248d
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.3.3/580ad1a4f34876c4f964c083361de31b3d60be68/commons-logging-1.3.3.jar is bd118c4b34a838a14b73701b9a519f01
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/3.0.3/a739bfc1b72d2f98d973cd1419f5ae2decd36068/pdfbox-3.0.3.jar with cache key 4dd8f8f5122794dcb3f0a6c88e65a8ce
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.3.3/580ad1a4f34876c4f964c083361de31b3d60be68/commons-logging-1.3.3.jar with cache key bd118c4b34a838a14b73701b9a519f01
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-text-desktop/1.8.2/9db545dedb30354f4f9fedce25d58d804eecfbd2/ui-text-desktop-1.8.2.jar is 3e4e532bbe7ac7a63de6154bfb349ddc
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-graphics-desktop/1.8.2/bca771ce391f6f410089f9b68e4af0c53996fcb6/ui-graphics-desktop-1.8.2.jar is 469d806dd52465bd802cdcb70488f8fd
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-desktop/1.8.2/703540d8fb0705482a06efcf765dcf8f2c1860ab/ui-desktop-1.8.2.jar with cache key f939c2fbcdd6f21cbaf5691724e2cbf5
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-unit-desktop/1.8.2/65eee0086e59109657cc7a7ad7569e1be78f1a93/ui-unit-desktop-1.8.2.jar is b645bf942dd6c39c47b09196a3976665
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-unit-desktop/1.8.2/65eee0086e59109657cc7a7ad7569e1be78f1a93/ui-unit-desktop-1.8.2.jar with cache key b645bf942dd6c39c47b09196a3976665
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-graphics-desktop/1.8.2/bca771ce391f6f410089f9b68e4af0c53996fcb6/ui-graphics-desktop-1.8.2.jar with cache key 469d806dd52465bd802cdcb70488f8fd
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-text-desktop/1.8.2/9db545dedb30354f4f9fedce25d58d804eecfbd2/ui-text-desktop-1.8.2.jar with cache key 3e4e532bbe7ac7a63de6154bfb349ddc
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-geometry-desktop/1.8.2/6301b97db2ec7ea140bf185f0712891cfa1f480d/ui-geometry-desktop-1.8.2.jar is b313918f8144cc80ae77954fb129ed12
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-util-desktop/1.8.2/2a882d6cfc3d1228c1284ca34a2ebfc2b5ca3815/ui-util-desktop-1.8.2.jar is ff20f21303aa9cbe8049216986ccd1d9
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-util-desktop/1.8.2/2a882d6cfc3d1228c1284ca34a2ebfc2b5ca3815/ui-util-desktop-1.8.2.jar with cache key ff20f21303aa9cbe8049216986ccd1d9
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-geometry-desktop/1.8.2/6301b97db2ec7ea140bf185f0712891cfa1f480d/ui-geometry-desktop-1.8.2.jar with cache key b313918f8144cc80ae77954fb129ed12
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-awt/0.9.4.2/1c5d9ec55031cef90d7874c20f001b179a0f656c/skiko-awt-0.9.4.2.jar is 483365dc9c1fd3e4bbbc07b059fd6f45
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-awt/0.9.4.2/1c5d9ec55031cef90d7874c20f001b179a0f656c/skiko-awt-0.9.4.2.jar with cache key 483365dc9c1fd3e4bbbc07b059fd6f45
+Build cache key for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/com.microsoft.onnxruntime/onnxruntime/1.20.0/717cd187f7d5080a8cc5c8aa761cafe2db028de1/onnxruntime-1.20.0.jar is 75cdcbbba3e2bfec0d9632b8b1c06470
+Stored cache entry for StructureTransformAction: /home/runner/.gradle/caches/modules-2/files-2.1/com.microsoft.onnxruntime/onnxruntime/1.20.0/717cd187f7d5080a8cc5c8aa761cafe2db028de1/onnxruntime-1.20.0.jar with cache key 75cdcbbba3e2bfec0d9632b8b1c06470
+Build cache key for task ':composeApp:kspKotlinDesktop' is 100358bbf17971d4770ab89f111ffde9
+Task ':composeApp:kspKotlinDesktop' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':composeApp:kspKotlinDesktop'.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+
+Resolve mutations for :composeApp:assembleDesktopMainResources (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:assembleDesktopMainResources (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:assembleDesktopMainResources
+Caching disabled for task ':composeApp:assembleDesktopMainResources' because:
+  There is no logic, just copy files
+Task ':composeApp:assembleDesktopMainResources' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopMain/composeResources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonMain/composeResources', not found
+Resolve mutations for :composeApp:convertXmlValueResourcesForCommonTest (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:convertXmlValueResourcesForCommonTest (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:convertXmlValueResourcesForCommonTest NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonTest/composeResources', not found
+Skipping task ':composeApp:convertXmlValueResourcesForCommonTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:copyNonXmlValueResourcesForCommonTest (Thread[Execution worker Thread 2,5,main]) started.
+:composeApp:copyNonXmlValueResourcesForCommonTest (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonTest/composeResources', not found
+Skipping task ':composeApp:copyNonXmlValueResourcesForCommonTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:prepareComposeResourcesTaskForCommonTest (Thread[Execution worker Thread 2,5,main]) started.
+:composeApp:prepareComposeResourcesTaskForCommonTest (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+Skipping task ':composeApp:prepareComposeResourcesTaskForCommonTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:generateResourceAccessorsForCommonTest (Thread[included builds,5,main]) started.
+:composeApp:generateResourceAccessorsForCommonTest (Thread[included builds,5,main]) started.
+
+> Task :composeApp:generateResourceAccessorsForCommonTest SKIPPED
+Skipping task ':composeApp:generateResourceAccessorsForCommonTest' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:convertXmlValueResourcesForDesktopTest (Thread[included builds,5,main]) started.
+:composeApp:convertXmlValueResourcesForDesktopTest (Thread[included builds,5,main]) started.
+
+> Task :composeApp:convertXmlValueResourcesForDesktopTest NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopTest/composeResources', not found
+Skipping task ':composeApp:convertXmlValueResourcesForDesktopTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:copyNonXmlValueResourcesForDesktopTest (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:copyNonXmlValueResourcesForDesktopTest (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:copyNonXmlValueResourcesForDesktopTest NO-SOURCE
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopTest/composeResources', not found
+Skipping task ':composeApp:copyNonXmlValueResourcesForDesktopTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:prepareComposeResourcesTaskForDesktopTest (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:prepareComposeResourcesTaskForDesktopTest (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:prepareComposeResourcesTaskForDesktopTest NO-SOURCE
+Skipping task ':composeApp:prepareComposeResourcesTaskForDesktopTest' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:generateResourceAccessorsForDesktopTest (Thread[Execution worker Thread 2,5,main]) started.
+:composeApp:generateResourceAccessorsForDesktopTest (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:generateResourceAccessorsForDesktopTest SKIPPED
+Skipping task ':composeApp:generateResourceAccessorsForDesktopTest' as task onlyIf 'Task satisfies onlyIf spec' is false.
+Resolve mutations for :composeApp:assembleDesktopTestResources (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:assembleDesktopTestResources (Thread[included builds,5,main]) started.
+
+> Task :composeApp:assembleDesktopTestResources
+Caching disabled for task ':composeApp:assembleDesktopTestResources' because:
+  There is no logic, just copy files
+Task ':composeApp:assembleDesktopTestResources' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/desktopTest/composeResources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/compose/resourceGenerator/preparedResources/commonTest/composeResources', not found
+Resolve mutations for :composeApp:desktopTestProcessResources (Thread[Execution worker Thread 3,5,main]) started.
+:composeApp:desktopTestProcessResources (Thread[Execution worker Thread 3,5,main]) started.
+
+> Task :composeApp:desktopTestProcessResources
+Caching disabled for task ':composeApp:desktopTestProcessResources' because:
+  Not worth caching
+Task ':composeApp:desktopTestProcessResources' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/resources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/resources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/resources', not found
+Resolve mutations for :composeApp:processDesktopTestResources (Thread[included builds,5,main]) started.
+:composeApp:processDesktopTestResources (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:processDesktopTestResources SKIPPED
+Skipping task ':composeApp:processDesktopTestResources' as task onlyIf 'Task is enabled' is false.
+
+> Task :composeApp:kspKotlinDesktop
+i: [ksp] loaded provider(s): [androidx.room.RoomKspProcessor$Provider]
+Stored cache entry for task ':composeApp:kspKotlinDesktop' with cache key 100358bbf17971d4770ab89f111ffde9
+Resolve mutations for :composeApp:compileKotlinDesktop (Thread[Execution worker,5,main]) started.
+:composeApp:compileKotlinDesktop (Thread[included builds,5,main]) started.
+Resolve mutations for :composeApp:copyRoomSchemas (Thread[Execution worker Thread 2,5,main]) started.
+:composeApp:copyRoomSchemas (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:copyRoomSchemas
+Caching disabled for task ':composeApp:copyRoomSchemas' because:
+  Simple disk bound task.
+Task ':composeApp:copyRoomSchemas' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :composeApp:desktopProcessResources (Thread[Execution worker,5,main]) started.
+:composeApp:desktopProcessResources (Thread[Execution worker,5,main]) started.
+
+> Task :composeApp:desktopProcessResources
+Caching disabled for task ':composeApp:desktopProcessResources' because:
+  Not worth caching
+Task ':composeApp:desktopProcessResources' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/resources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/resources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/resources', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/resources', not found
+Resolve mutations for :composeApp:processDesktopMainResources (Thread[Execution worker,5,main]) started.
+:composeApp:processDesktopMainResources (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:processDesktopMainResources SKIPPED
+Skipping task ':composeApp:processDesktopMainResources' as task onlyIf 'Task is enabled' is false.
+
+> Task :composeApp:compileKotlinDesktop
+Transforming material3-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming desktop-jvm-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.desktop/desktop-jvm/1.8.2/61be96a019ac35e8751b08b33856344a24586648/desktop-jvm-1.8.2.jar is 77079342094cb84ea05a6005e1040e09
+Transforming material-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-desktop/1.8.2/1f1f838506ceb2c25499517559f120517770b014/material3-desktop-1.8.2.jar is 34251b9a5c00e6ae8e2dce6fc74e83bd
+Transforming material-ripple-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming foundation-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming animation-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming foundation-layout-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming runtime-saveable-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-tooling-preview-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming runtime-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming room-common-jvm-2.7.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming room-runtime-jvm-2.7.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming lifecycle-common-jvm-2.8.5.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming animation-core-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlinx-coroutines-core-jvm-1.10.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlinx-coroutines-swing-1.10.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming collection-jvm-1.4.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-desktop/1.8.2/7aae6f749a060718d931957a27d495f26b2d4f37/material-desktop-1.8.2.jar is 8213cf13a24d64dd3b11f559b87e7937
+Transforming sqlite-bundled-jvm-2.5.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming sqlite-jvm-2.5.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming annotation-jvm-1.9.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlin-stdlib-2.1.21.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming onnxruntime-1.20.0.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming pdfbox-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming annotations-23.0.0.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming fontbox-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming pdfbox-io-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming commons-logging-1.3.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-text-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-graphics-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-unit-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming skiko-awt-0.9.4.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-geometry-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-util-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-ripple-desktop/1.8.2/5c9c96a95930f802de1b611fb610db4a0eff49cf/material-ripple-desktop-1.8.2.jar is 8244dc064a90f109ce5c20f288f0e37c
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.desktop/desktop-jvm/1.8.2/61be96a019ac35e8751b08b33856344a24586648/desktop-jvm-1.8.2.jar with cache key 77079342094cb84ea05a6005e1040e09
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-desktop/1.8.2/a251fa6042a2647206fb47795485a1ad07a69dd6/foundation-desktop-1.8.2.jar is a35575b8e4f0313dde1f752c8046c3df
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-ripple-desktop/1.8.2/5c9c96a95930f802de1b611fb610db4a0eff49cf/material-ripple-desktop-1.8.2.jar with cache key 8244dc064a90f109ce5c20f288f0e37c
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-desktop/1.8.2/84109f752086843a85325f8aeffa2302b312c948/animation-desktop-1.8.2.jar is 1accc50c36124d94768fb52b73a7ffb9
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-desktop/1.8.2/84109f752086843a85325f8aeffa2302b312c948/animation-desktop-1.8.2.jar with cache key 1accc50c36124d94768fb52b73a7ffb9
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-layout-desktop/1.8.2/726fa1c81f73f76e89383ada6d9b61fc71bcf07c/foundation-layout-desktop-1.8.2.jar is 8f9ce822addb24847355d05d7d99c6ac
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-layout-desktop/1.8.2/726fa1c81f73f76e89383ada6d9b61fc71bcf07c/foundation-layout-desktop-1.8.2.jar with cache key 8f9ce822addb24847355d05d7d99c6ac
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-desktop/1.8.2/703540d8fb0705482a06efcf765dcf8f2c1860ab/ui-desktop-1.8.2.jar is b561ecbf695154549c8ed7454d3a53a3
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material/material-desktop/1.8.2/7aae6f749a060718d931957a27d495f26b2d4f37/material-desktop-1.8.2.jar with cache key 8213cf13a24d64dd3b11f559b87e7937
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-saveable-desktop/1.8.2/952c9bfa714b76d73d2cd872ced4d3b58a7dc7c/runtime-saveable-desktop-1.8.2.jar is a57da7f11063bffbb4a3dbf086515e28
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-saveable-desktop/1.8.2/952c9bfa714b76d73d2cd872ced4d3b58a7dc7c/runtime-saveable-desktop-1.8.2.jar with cache key a57da7f11063bffbb4a3dbf086515e28
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-tooling-preview-desktop/1.8.2/7e1d509da90394d063aef5b444bf218024b13250/ui-tooling-preview-desktop-1.8.2.jar is 2d6d7070ca31312dbdf9c1c009ce6703
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-tooling-preview-desktop/1.8.2/7e1d509da90394d063aef5b444bf218024b13250/ui-tooling-preview-desktop-1.8.2.jar with cache key 2d6d7070ca31312dbdf9c1c009ce6703
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-desktop/1.8.2/7a1668d4c5899a12dae59f4ecc805c3179333538/runtime-desktop-1.8.2.jar is cd6cdf2043e5da18db0c27af2dbd366d
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-desktop/1.8.2/1f1f838506ceb2c25499517559f120517770b014/material3-desktop-1.8.2.jar with cache key 34251b9a5c00e6ae8e2dce6fc74e83bd
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.room/room-runtime-jvm/2.7.1/f74e87c9fb813a2964c2c73087d1511d8dac4c85/room-runtime-jvm-2.7.1.jar is 7adfaabc30ed5f7d1c20f8dffb4a4562
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.room/room-runtime-jvm/2.7.1/f74e87c9fb813a2964c2c73087d1511d8dac4c85/room-runtime-jvm-2.7.1.jar with cache key 7adfaabc30ed5f7d1c20f8dffb4a4562
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common-jvm/2.8.5/7174a594afb73a9ad9ac9074ce78b94af3cc52a7/lifecycle-common-jvm-2.8.5.jar is 3296ac92129d5bc9bb557c93145075b1
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common-jvm/2.8.5/7174a594afb73a9ad9ac9074ce78b94af3cc52a7/lifecycle-common-jvm-2.8.5.jar with cache key 3296ac92129d5bc9bb557c93145075b1
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-core-desktop/1.8.2/ff4a236b5e86b2e12449ae75755048d1a2a99102/animation-core-desktop-1.8.2.jar is 74672979353c49725ef89bc7e38541de
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation-core-desktop/1.8.2/ff4a236b5e86b2e12449ae75755048d1a2a99102/animation-core-desktop-1.8.2.jar with cache key 74672979353c49725ef89bc7e38541de
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-swing/1.10.2/ccb5a2e7c83fa76da0ba4677f05678d3bd3eed57/kotlinx-coroutines-swing-1.10.2.jar is 1891b52c07b53f1cbf112d12acc7fdd9
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-swing/1.10.2/ccb5a2e7c83fa76da0ba4677f05678d3bd3eed57/kotlinx-coroutines-swing-1.10.2.jar with cache key 1891b52c07b53f1cbf112d12acc7fdd9
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.2/bc60b5568a66d765a9fe8e266fd0c6c727e0b50b/collection-jvm-1.4.2.jar is f9f6788767e01891607da8429b24c7a4
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.runtime/runtime-desktop/1.8.2/7a1668d4c5899a12dae59f4ecc805c3179333538/runtime-desktop-1.8.2.jar with cache key cd6cdf2043e5da18db0c27af2dbd366d
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-bundled-jvm/2.5.1/20c1158896f81d922540ada1df000c08052d135e/sqlite-bundled-jvm-2.5.1.jar is 1300431ef2c38f8ec1aa823cee5c3be6
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-bundled-jvm/2.5.1/20c1158896f81d922540ada1df000c08052d135e/sqlite-bundled-jvm-2.5.1.jar with cache key 1300431ef2c38f8ec1aa823cee5c3be6
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-jvm/2.5.1/c25fd66c89fa5c47439c155c72935cd1e2ba4591/sqlite-jvm-2.5.1.jar is 49261584013c3a1935f3e4ee4a391f80
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.sqlite/sqlite-jvm/2.5.1/c25fd66c89fa5c47439c155c72935cd1e2ba4591/sqlite-jvm-2.5.1.jar with cache key 49261584013c3a1935f3e4ee4a391f80
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.microsoft.onnxruntime/onnxruntime/1.20.0/717cd187f7d5080a8cc5c8aa761cafe2db028de1/onnxruntime-1.20.0.jar is a58a7d1c76200b4081b8ac36e4198498
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.microsoft.onnxruntime/onnxruntime/1.20.0/717cd187f7d5080a8cc5c8aa761cafe2db028de1/onnxruntime-1.20.0.jar with cache key a58a7d1c76200b4081b8ac36e4198498
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/3.0.3/a739bfc1b72d2f98d973cd1419f5ae2decd36068/pdfbox-3.0.3.jar is 858e3e737daa11c75007eb7bcddc1efc
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-desktop/1.8.2/a251fa6042a2647206fb47795485a1ad07a69dd6/foundation-desktop-1.8.2.jar with cache key a35575b8e4f0313dde1f752c8046c3df
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/3.0.3/9eebd1ee868a79fcf7390283b2baf4179dadb8ed/fontbox-3.0.3.jar is c6b8f7143664652c2034907f0691b77c
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/3.0.3/9eebd1ee868a79fcf7390283b2baf4179dadb8ed/fontbox-3.0.3.jar with cache key c6b8f7143664652c2034907f0691b77c
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox-io/3.0.3/c40dcf555b72b1d8c0cd19391d63e5b58382b9cb/pdfbox-io-3.0.3.jar is 6f2cbb78653c457d3d3ed2a00fb2d62b
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox-io/3.0.3/c40dcf555b72b1d8c0cd19391d63e5b58382b9cb/pdfbox-io-3.0.3.jar with cache key 6f2cbb78653c457d3d3ed2a00fb2d62b
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.3.3/580ad1a4f34876c4f964c083361de31b3d60be68/commons-logging-1.3.3.jar is 6b6210881b4ac27f79434c461144f41e
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.3.3/580ad1a4f34876c4f964c083361de31b3d60be68/commons-logging-1.3.3.jar with cache key 6b6210881b4ac27f79434c461144f41e
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-text-desktop/1.8.2/9db545dedb30354f4f9fedce25d58d804eecfbd2/ui-text-desktop-1.8.2.jar is 95ffe8e08cde17b2245c59a2f02609f6
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.2/bc60b5568a66d765a9fe8e266fd0c6c727e0b50b/collection-jvm-1.4.2.jar with cache key f9f6788767e01891607da8429b24c7a4
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-graphics-desktop/1.8.2/bca771ce391f6f410089f9b68e4af0c53996fcb6/ui-graphics-desktop-1.8.2.jar is 34c52a7510216ae7a4baebb3bd65f86e
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/pdfbox/3.0.3/a739bfc1b72d2f98d973cd1419f5ae2decd36068/pdfbox-3.0.3.jar with cache key 858e3e737daa11c75007eb7bcddc1efc
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-unit-desktop/1.8.2/65eee0086e59109657cc7a7ad7569e1be78f1a93/ui-unit-desktop-1.8.2.jar is af384588718851969497cace64131c7b
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-desktop/1.8.2/703540d8fb0705482a06efcf765dcf8f2c1860ab/ui-desktop-1.8.2.jar with cache key b561ecbf695154549c8ed7454d3a53a3
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-awt/0.9.4.2/1c5d9ec55031cef90d7874c20f001b179a0f656c/skiko-awt-0.9.4.2.jar is bde3aa5845b873ba7c2843b77179dcd1
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-text-desktop/1.8.2/9db545dedb30354f4f9fedce25d58d804eecfbd2/ui-text-desktop-1.8.2.jar with cache key 95ffe8e08cde17b2245c59a2f02609f6
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-geometry-desktop/1.8.2/6301b97db2ec7ea140bf185f0712891cfa1f480d/ui-geometry-desktop-1.8.2.jar is 8f32f80ed83d13daeb2b49d1485af264
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-unit-desktop/1.8.2/65eee0086e59109657cc7a7ad7569e1be78f1a93/ui-unit-desktop-1.8.2.jar with cache key af384588718851969497cace64131c7b
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-util-desktop/1.8.2/2a882d6cfc3d1228c1284ca34a2ebfc2b5ca3815/ui-util-desktop-1.8.2.jar is b809c58e7120fa9b15221923f0d59ddf
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-graphics-desktop/1.8.2/bca771ce391f6f410089f9b68e4af0c53996fcb6/ui-graphics-desktop-1.8.2.jar with cache key 34c52a7510216ae7a4baebb3bd65f86e
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-geometry-desktop/1.8.2/6301b97db2ec7ea140bf185f0712891cfa1f480d/ui-geometry-desktop-1.8.2.jar with cache key 8f32f80ed83d13daeb2b49d1485af264
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-util-desktop/1.8.2/2a882d6cfc3d1228c1284ca34a2ebfc2b5ca3815/ui-util-desktop-1.8.2.jar with cache key b809c58e7120fa9b15221923f0d59ddf
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-awt/0.9.4.2/1c5d9ec55031cef90d7874c20f001b179a0f656c/skiko-awt-0.9.4.2.jar with cache key bde3aa5845b873ba7c2843b77179dcd1
+Build cache key for task ':composeApp:compileKotlinDesktop' is 731a367aac31e525edc78a8ba2806ddd
+Task ':composeApp:compileKotlinDesktop' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':composeApp:compileKotlinDesktop'.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+Kotlin source files: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/kotlin/app/facefiles/platform/DesktopPlatform.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/kotlin/app/facefiles/main.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/kotlin/app/facefiles/SelfTest.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/jvmShared/kotlin/app/facefiles/scan/ScanOptions.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/jvmShared/kotlin/app/facefiles/scan/FileScanner.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/kotlin/app/facefiles/data/FileDao_Impl.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/kotlin/app/facefiles/data/AppDatabaseConstructor.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/kotlin/app/facefiles/data/FaceDao_Impl.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/kotlin/app/facefiles/data/AppDatabase_Impl.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/ui/App.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/domain/ScanEvent.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/domain/FileCategory.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/FileEntity.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/FaceEntity.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/FileDao.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/AppDatabase.kt, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/FaceDao.kt
+Java source files: 
+Script source files: 
+Script file extensions: 
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopMain/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/java', not found
+Using Kotlin/JVM incremental compilation
+[KOTLIN] Kotlin compilation 'jdkHome' argument: /usr/lib/jvm/temurin-17-jdk-amd64
+i: starting the daemon as: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java -cp /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.1.21/70a69b95905e33806fbee6c6c9c48e2b2b2b4da4/kotlin-compiler-embeddable-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.1.21/e274d560d10526099330411c45961f04d85e77b9/kotlin-script-runtime-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.1.21/2376f98b59395adad949ca19811283fafb1b2e31/kotlin-daemon-embeddable-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20200330/3afb14d5f9ceb459d724e907a21145e8ff394f02/trove4j-1.0.20200330.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar -Djava.awt.headless=true -Djava.rmi.server.hostname=127.0.0.1 -Xmx3g -XX:ReservedCodeCacheSize=320m -Dkotlin.environment.keepalive -ea -XX:+UseCodeCacheFlushing -XX:+UseParallelGC -Dkotlin.daemon.initiator.marker.file=/tmp/kotlin-compiler-in-aceiles-3363374023660367619.alive --add-exports java.base/sun.nio.ch=ALL-UNNAMED org.jetbrains.kotlin.daemon.KotlinCompileDaemon --daemon-runFilesPath /home/runner/.kotlin/daemon --daemon-autoshutdownIdleSeconds=7200 --daemon-compilerClasspath /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.1.21/70a69b95905e33806fbee6c6c9c48e2b2b2b4da4/kotlin-compiler-embeddable-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/97a0975aa19d925e109537af60eb46902920015c/kotlin-stdlib-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.1.21/e274d560d10526099330411c45961f04d85e77b9/kotlin-script-runtime-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.1.21/2376f98b59395adad949ca19811283fafb1b2e31/kotlin-daemon-embeddable-2.1.21.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20200330/3afb14d5f9ceb459d724e907a21145e8ff394f02/trove4j-1.0.20200330.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar:/home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar
+i: #1 retrying connecting to the daemon 
+Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@137d7579, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileKotlinDesktop/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileKotlinDesktop/local-state/build-history.bin, useModuleDetection=false), usePreciseJavaTracking=true, icFeatures=IncrementalCompilationFeatures(withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/kotlin/desktop/main, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileKotlinDesktop/cacheable, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileKotlinDesktop/local-state])
+w: file:///home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/kotlin/app/facefiles/data/AppDatabaseConstructor.kt:5:8 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. Consider using the '-Xexpect-actual-classes' flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonMain/kotlin/app/facefiles/data/AppDatabase.kt:23:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. Consider using the '-Xexpect-actual-classes' flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+Finished executing kotlin compiler using DAEMON strategy
+Stored cache entry for task ':composeApp:compileKotlinDesktop' with cache key 731a367aac31e525edc78a8ba2806ddd
+Resolve mutations for :composeApp:compileDesktopMainJava (Thread[included builds,5,main]) started.
+:composeApp:compileDesktopMainJava (Thread[included builds,5,main]) started.
+
+> Task :composeApp:compileDesktopMainJava NO-SOURCE
+Skipping task ':composeApp:compileDesktopMainJava' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:desktopMainClasses (Thread[included builds,5,main]) started.
+:composeApp:desktopMainClasses (Thread[included builds,5,main]) started.
+
+> Task :composeApp:desktopMainClasses
+Skipping task ':composeApp:desktopMainClasses' as it has no actions.
+Resolve mutations for :composeApp:desktopJar (Thread[included builds,5,main]) started.
+:composeApp:desktopJar (Thread[included builds,5,main]) started.
+
+> Task :composeApp:desktopJar
+Caching disabled for task ':composeApp:desktopJar' because:
+  Not worth caching
+Task ':composeApp:desktopJar' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/java/desktopMain', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/generated/ksp/desktop/desktopMain/classes', not found
+Resolve mutations for :composeApp:compileTestKotlinDesktop (Thread[included builds,5,main]) started.
+:composeApp:compileTestKotlinDesktop (Thread[included builds,5,main]) started.
+
+> Task :composeApp:compileTestKotlinDesktop
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test/2.1.21/kotlin-test-2.1.21.pom to /home/runner/.gradle/.tmp/gradle_download14926827045489609145bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test/2.1.21/kotlin-test-2.1.21.module to /home/runner/.gradle/.tmp/gradle_download12989213269971594142bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test-junit5/2.1.21/kotlin-test-junit5-2.1.21.pom to /home/runner/.gradle/.tmp/gradle_download89068150984533168bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test-junit5/2.1.21/kotlin-test-junit5-2.1.21.module to /home/runner/.gradle/.tmp/gradle_download9416888341052302678bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.pom to /home/runner/.gradle/.tmp/gradle_download565934254261594696bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.pom to /home/runner/.gradle/.tmp/gradle_download438712981949395630bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module to /home/runner/.gradle/.tmp/gradle_download15249300299470630048bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.module to /home/runner/.gradle/.tmp/gradle_download5795857683211183201bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download478914118275827134bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download2233832917859186040bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.pom to /home/runner/.gradle/.tmp/gradle_download16925631746185759829bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.module to /home/runner/.gradle/.tmp/gradle_download2478167680011726952bin
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom to /home/runner/.gradle/.tmp/gradle_download984981414185913768bin
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.module to /home/runner/.gradle/.tmp/gradle_download15970111471758977986bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test-junit5/2.1.21/kotlin-test-junit5-2.1.21.jar to /home/runner/.gradle/.tmp/gradle_download9363487451271644527bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar to /home/runner/.gradle/.tmp/gradle_download14204494032724808802bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar to /home/runner/.gradle/.tmp/gradle_download2096031205726829738bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar to /home/runner/.gradle/.tmp/gradle_download13514197703769679367bin
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar to /home/runner/.gradle/.tmp/gradle_download17909634082120295972bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-test/2.1.21/kotlin-test-2.1.21.jar to /home/runner/.gradle/.tmp/gradle_download14066773411577477364bin
+Transforming main with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming material3-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming desktop-jvm-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming material-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming material-ripple-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming foundation-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming animation-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming foundation-layout-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming runtime-saveable-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-tooling-preview-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming runtime-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming room-common-jvm-2.7.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming room-runtime-jvm-2.7.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming lifecycle-common-jvm-2.8.5.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming animation-core-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlinx-coroutines-core-jvm-1.10.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlinx-coroutines-swing-1.10.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/kotlin/desktop/main is 1dd638f21cdc957ae36d6e25a701e0a0
+Transforming kotlin-test-junit5-2.1.21.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlin-test-2.1.21.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-junit5/2.1.21/25a13b3798de6aff1d780c797103358a364a79de/kotlin-test-junit5-2.1.21.jar is 61dde3769900511be85b972df23b28d3
+Transforming collection-jvm-1.4.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming sqlite-bundled-jvm-2.5.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming sqlite-jvm-2.5.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming annotation-jvm-1.9.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming kotlin-stdlib-2.1.21.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming onnxruntime-1.20.0.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming pdfbox-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming annotations-23.0.0.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming fontbox-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming pdfbox-io-3.0.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming commons-logging-1.3.3.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-text-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-graphics-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-unit-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming junit-platform-commons-1.10.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming junit-jupiter-api-5.10.1.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming skiko-awt-0.9.4.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-geometry-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming ui-util-desktop-1.8.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming opentest4j-1.3.0.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Transforming apiguardian-api-1.1.2.jar with BuildToolsApiClasspathEntrySnapshotTransform
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-junit5/2.1.21/25a13b3798de6aff1d780c797103358a364a79de/kotlin-test-junit5-2.1.21.jar with cache key 61dde3769900511be85b972df23b28d3
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test/2.1.21/8cd4c9b8c8857aefc97662f582f613943519581/kotlin-test-2.1.21.jar is a12d3bba451078109b27ab6865042e83
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.1/2bfcd4a4e38b10c671b6916d7e543c20afe25579/junit-platform-commons-1.10.1.jar is 67177bb9566c4abfd9be2173ed679a90
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.1/eb90c7d8bfaae8fdc97b225733fcb595ddd72843/junit-jupiter-api-5.10.1.jar is 635c6977ca7df411409f5a6eacb86797
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.1/2bfcd4a4e38b10c671b6916d7e543c20afe25579/junit-platform-commons-1.10.1.jar with cache key 67177bb9566c4abfd9be2173ed679a90
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar is 381bf2af2998e653372a2b2c7f16818d
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/kotlin/desktop/main with cache key 1dd638f21cdc957ae36d6e25a701e0a0
+Build cache key for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar is ee4f9bd8c4276feadc9432bd84759eb2
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.1/eb90c7d8bfaae8fdc97b225733fcb595ddd72843/junit-jupiter-api-5.10.1.jar with cache key 635c6977ca7df411409f5a6eacb86797
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test/2.1.21/8cd4c9b8c8857aefc97662f582f613943519581/kotlin-test-2.1.21.jar with cache key a12d3bba451078109b27ab6865042e83
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar with cache key 381bf2af2998e653372a2b2c7f16818d
+Stored cache entry for BuildToolsApiClasspathEntrySnapshotTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar with cache key ee4f9bd8c4276feadc9432bd84759eb2
+Build cache key for task ':composeApp:compileTestKotlinDesktop' is 52a3359f65f9e91f553b876b4143881e
+Task ':composeApp:compileTestKotlinDesktop' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':composeApp:compileTestKotlinDesktop'.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+Kotlin source files: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/kotlin/app/facefiles/FileScannerTest.kt
+Java source files: 
+Script source files: 
+Script file extensions: 
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/desktopTest/java', not found
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/src/commonTest/kotlin', not found
+Using Kotlin/JVM incremental compilation
+[KOTLIN] Kotlin compilation 'jdkHome' argument: /usr/lib/jvm/temurin-17-jdk-amd64
+Options for KOTLIN DAEMON: IncrementalCompilationOptions(super=CompilationOptions(compilerMode=INCREMENTAL_COMPILER, targetPlatform=JVM, reportCategories=[0, 3], reportSeverity=2, requestedCompilationResults=[0], kotlinScriptExtensions=[]), sourceChanges=org.jetbrains.kotlin.buildtools.api.SourcesChanges$Unknown@137d7579, classpathChanges=NotAvailableForNonIncrementalRun, workingDir=/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileTestKotlinDesktop/cacheable, multiModuleICSettings=MultiModuleICSettings(buildHistoryFile=/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileTestKotlinDesktop/local-state/build-history.bin, useModuleDetection=false), usePreciseJavaTracking=true, icFeatures=IncrementalCompilationFeatures(withAbiSnapshot=false, preciseCompilationResultsBackup=true, keepIncrementalCompilationCachesInMemory=true, enableUnsafeIncrementalCompilationForMultiplatform=false, enableMonotonousIncrementalCompileSetExpansion=true), outputFiles=[/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/kotlin/desktop/test, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileTestKotlinDesktop/cacheable, /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/kotlin/compileTestKotlinDesktop/local-state])
+Finished executing kotlin compiler using DAEMON strategy
+Stored cache entry for task ':composeApp:compileTestKotlinDesktop' with cache key 52a3359f65f9e91f553b876b4143881e
+Resolve mutations for :composeApp:compileDesktopTestJava (Thread[Execution worker Thread 2,5,main]) started.
+:composeApp:compileDesktopTestJava (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :composeApp:compileDesktopTestJava NO-SOURCE
+Skipping task ':composeApp:compileDesktopTestJava' as it has no source files and no previous output files.
+Resolve mutations for :composeApp:desktopTestClasses (Thread[included builds,5,main]) started.
+:composeApp:desktopTestClasses (Thread[included builds,5,main]) started.
+
+> Task :composeApp:desktopTestClasses
+Skipping task ':composeApp:desktopTestClasses' as it has no actions.
+Resolve mutations for :composeApp:desktopTest (Thread[included builds,5,main]) started.
+:composeApp:desktopTest (Thread[included builds,5,main]) started.
+
+> Task :composeApp:desktopTest
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko-awt-runtime-linux-x64/0.9.4.2/skiko-awt-runtime-linux-x64-0.9.4.2.pom to /home/runner/.gradle/.tmp/gradle_download17002782573251575265bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/atomicfu/0.23.2/atomicfu-0.23.2.pom to /home/runner/.gradle/.tmp/gradle_download753756631295877607bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/atomicfu/0.23.2/atomicfu-0.23.2.module to /home/runner/.gradle/.tmp/gradle_download18422453059202551233bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime/0.6.0/kotlinx-datetime-0.6.0.pom to /home/runner/.gradle/.tmp/gradle_download10988109627027475658bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime/0.6.0/kotlinx-datetime-0.6.0.module to /home/runner/.gradle/.tmp/gradle_download1726139896943943508bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.21/kotlin-stdlib-jdk8-2.1.21.pom to /home/runner/.gradle/.tmp/gradle_download2569952838432590479bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.pom to /home/runner/.gradle/.tmp/gradle_download18229899503931042674bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.module to /home/runner/.gradle/.tmp/gradle_download3460850319255582359bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.pom to /home/runner/.gradle/.tmp/gradle_download17459904135370917026bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.module to /home/runner/.gradle/.tmp/gradle_download14488640933878407287bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/atomicfu-jvm/0.23.2/atomicfu-jvm-0.23.2.pom to /home/runner/.gradle/.tmp/gradle_download7566458136409876187bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/atomicfu-jvm/0.23.2/atomicfu-jvm-0.23.2.module to /home/runner/.gradle/.tmp/gradle_download12270248918027282719bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-backhandler-desktop/1.8.2/ui-backhandler-desktop-1.8.2.pom to /home/runner/.gradle/.tmp/gradle_download12828333322079162239bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-backhandler-desktop/1.8.2/ui-backhandler-desktop-1.8.2.module to /home/runner/.gradle/.tmp/gradle_download2136611453392453588bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime-jvm/0.6.0/kotlinx-datetime-jvm-0.6.0.pom to /home/runner/.gradle/.tmp/gradle_download105039157296930064bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime-jvm/0.6.0/kotlinx-datetime-jvm-0.6.0.module to /home/runner/.gradle/.tmp/gradle_download11873554767048863801bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/androidx/lifecycle/lifecycle-runtime-compose-desktop/2.8.4/lifecycle-runtime-compose-desktop-2.8.4.pom to /home/runner/.gradle/.tmp/gradle_download10392376082401952674bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/androidx/lifecycle/lifecycle-runtime-compose-desktop/2.8.4/lifecycle-runtime-compose-desktop-2.8.4.module to /home/runner/.gradle/.tmp/gradle_download12546155061685478819bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.pom to /home/runner/.gradle/.tmp/gradle_download3801408148121224373bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.module to /home/runner/.gradle/.tmp/gradle_download5958787712844497838bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/2.1.21/kotlin-stdlib-jdk7-2.1.21.pom to /home/runner/.gradle/.tmp/gradle_download503892197163048701bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-desktop/2.8.5/lifecycle-runtime-desktop-2.8.5.pom to /home/runner/.gradle/.tmp/gradle_download3605096403680931708bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-desktop/2.8.5/lifecycle-runtime-desktop-2.8.5.module to /home/runner/.gradle/.tmp/gradle_download15210762191017720402bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-desktop/2.8.5/lifecycle-viewmodel-desktop-2.8.5.pom to /home/runner/.gradle/.tmp/gradle_download14591370061667573750bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-desktop/2.8.5/lifecycle-viewmodel-desktop-2.8.5.module to /home/runner/.gradle/.tmp/gradle_download16170201435272571749bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-desktop/2.8.5/lifecycle-viewmodel-desktop-2.8.5.jar to /home/runner/.gradle/.tmp/gradle_download16337410754761407656bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/compose/ui/ui-backhandler-desktop/1.8.2/ui-backhandler-desktop-1.8.2.jar to /home/runner/.gradle/.tmp/gradle_download7891593266684277146bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/androidx/lifecycle/lifecycle-runtime-compose-desktop/2.8.4/lifecycle-runtime-compose-desktop-2.8.4.jar to /home/runner/.gradle/.tmp/gradle_download17548065510236809139bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/skiko/skiko-awt-runtime-linux-x64/0.9.4.2/skiko-awt-runtime-linux-x64-0.9.4.2.jar to /home/runner/.gradle/.tmp/gradle_download18151954146810166360bin
+Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-desktop/2.8.5/lifecycle-runtime-desktop-2.8.5.jar to /home/runner/.gradle/.tmp/gradle_download2518614040722592125bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.21/kotlin-stdlib-jdk8-2.1.21.jar to /home/runner/.gradle/.tmp/gradle_download15409907505470221069bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/atomicfu-jvm/0.23.2/atomicfu-jvm-0.23.2.jar to /home/runner/.gradle/.tmp/gradle_download11216598275928197435bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/2.1.21/kotlin-stdlib-jdk7-2.1.21.jar to /home/runner/.gradle/.tmp/gradle_download8171546872751376441bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-datetime-jvm/0.6.0/kotlinx-datetime-jvm-0.6.0.jar to /home/runner/.gradle/.tmp/gradle_download13876640705928308713bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar to /home/runner/.gradle/.tmp/gradle_download7894974770147298076bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar to /home/runner/.gradle/.tmp/gradle_download11308335750475125557bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar to /home/runner/.gradle/.tmp/gradle_download9679576516333278085bin
+Build cache key for task ':composeApp:desktopTest' is f267733f9b4aac6e4dfa4c6af7fb23e7
+Task ':composeApp:desktopTest' is not up-to-date because:
+  No history is available.
+file or directory '/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/classes/java/desktopTest', not found
+Starting process 'Gradle Test Executor 1'. Working directory: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java -Dorg.gradle.internal.worker.tmpdir=/home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/tmp/desktopTest/work @/home/runner/.gradle/.tmp/gradle-worker-classpath4499942233613257314txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+
+Gradle Test Executor 1 started executing tests.
+
+> Task :composeApp:desktopTest
+
+FileScannerTest[desktop] > handles_fifteen_thousand_files()[desktop] STANDARD_OUT
+    15k files: first scan 287 ms
+    15k files: rescan 163 ms
+
+Gradle Test Executor 1 finished executing tests.
+
+> Task :composeApp:desktopTest
+Finished generating test XML results (0.01 secs) into: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/test-results/desktopTest
+Generating HTML test report...
+Finished generating test html results (0.025 secs) into: /home/runner/work/Finding-her-eyes/Finding-her-eyes/composeApp/build/reports/tests/desktopTest
+Stored cache entry for task ':composeApp:desktopTest' with cache key f267733f9b4aac6e4dfa4c6af7fb23e7
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1793369308290.json
+Build 8de58304-cd4c-4ece-a693-6580ecccd1ed is closed
+
+BUILD SUCCESSFUL in 48s
+10 actionable tasks: 10 executed
