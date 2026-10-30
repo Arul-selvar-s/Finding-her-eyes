@@ -17,12 +17,14 @@ kotlin {
 
     jvm("desktop") {
         compilerOptions { jvmTarget.set(JvmTarget.JVM_17) }
+        testRuns["test"].executionTask.configure { useJUnitPlatform() }
     }
 
     sourceSets {
         val commonMain by getting
         val androidMain by getting
         val desktopMain by getting
+        val desktopTest by getting
 
         // Code that only needs java.io / java.nio / ai.onnxruntime (identical API on
         // Android and Desktop) lives here once and is compiled into BOTH targets.
@@ -48,6 +50,10 @@ kotlin {
 
             // On-device inference (face detection + MobileFaceNet embeddings)
             implementation(libs.onnxruntime.android)
+        }
+
+        desktopTest.dependencies {
+            implementation(kotlin("test"))
         }
 
         desktopMain.dependencies {

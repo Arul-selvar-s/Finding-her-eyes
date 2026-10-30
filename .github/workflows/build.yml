@@ -1,13 +1,17 @@
-name: Build FaceFiles (Android APK + Windows app)
+name: Build & test FaceFiles
 
 on:
-  push:                 # every commit, on every branch
+  push:
+    branches-ignore: [ci-reports]   # every commit, every branch (except the report branch)
   pull_request:
-  workflow_dispatch:    # "Run workflow" button in the Actions tab
+  workflow_dispatch:
 
 concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: write   # lets jobs push logs/screenshots to the `ci-reports` branch
 
 env:
   GRADLE_VERSION: "8.11.1"   # installed by the workflow - no gradle-wrapper.jar needed in the repo
@@ -15,73 +19,145 @@ env:
 
 jobs:
   # ---------------------------------------------------------------------------
+  unit-tests:
+    name: Unit tests (scanner + Room)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "${{ env.JAVA_VERSION }}" }
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
+      - name: Run tests
+        run: gradle :composeApp:desktopTest --stacktrace --info 2>&1 | tee test.log
+      - name: Publish report
+        if: always()
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: bash scripts/publish-report.sh unit-tests test.log composeApp/build/test-results/desktopTest
+
+  # ---------------------------------------------------------------------------
   android:
     name: Android APK
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-
+        with: { distribution: temurin, java-version: "${{ env.JAVA_VERSION }}" }
       - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: ${{ env.GRADLE_VERSION }}
-
+        with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
       - name: Build debug APK
-        run: gradle :composeApp:assembleDebug --stacktrace
-
+        run: gradle :composeApp:assembleDebug --stacktrace 2>&1 | tee build.log
       - uses: actions/upload-artifact@v4
         with:
           name: FaceFiles-Android-APK
           path: composeApp/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+      - name: Publish report
+        if: always()
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: bash scripts/publish-report.sh android-build build.log
+
+  # ---------------------------------------------------------------------------
+  android-e2e:
+    name: Android emulator test
+    needs: android
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: FaceFiles-Android-APK
+          path: apk
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Run app on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash scripts/android-e2e.sh
+      - name: Publish report
+        if: always()
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: bash scripts/publish-report.sh android-e2e e2e-out
 
   # ---------------------------------------------------------------------------
   windows:
     name: Windows desktop app
     runs-on: windows-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
-
+        with: { distribution: temurin, java-version: "${{ env.JAVA_VERSION }}" }
       - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: ${{ env.GRADLE_VERSION }}
+        with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
 
       # 1) Portable build: a folder with FaceFiles.exe + a bundled Java runtime.
-      #    Unzip anywhere and double-click. Needs no installer tooling, so it always works.
       - name: Build portable app
-        run: gradle :composeApp:createDistributable --stacktrace
+        shell: bash
+        run: gradle :composeApp:createDistributable --stacktrace 2>&1 | tee build.log
+
+      # 2) Run the PACKAGED app headless: ONNX native lib, SQLite native lib, scanner, Room.
+      - name: Self-test packaged app
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path sample\Pictures\sub, sample\Docs | Out-Null
+          1..5 | ForEach-Object { [IO.File]::WriteAllBytes("$PWD\sample\Pictures\sub\p$_.jpg", (New-Object byte[] 2048)) }
+          [IO.File]::WriteAllBytes("$PWD\sample\Docs\a.pdf", (New-Object byte[] 512))
+          $exe = "$PWD\composeApp\build\compose\binaries\main\app\FaceFiles\FaceFiles.exe"
+          $p = Start-Process -FilePath $exe -ArgumentList "--selftest","$PWD\sample","$PWD\selftest.txt" -PassThru -Wait
+          if (Test-Path selftest.txt) { Get-Content selftest.txt } else { Write-Host "no selftest.txt produced" }
+          if ($p.ExitCode -ne 0) { exit 1 }
+
+      # 3) Start the real UI, let it run, take a screenshot.
+      - name: Launch UI and screenshot
+        shell: pwsh
+        run: |
+          $exe = "$PWD\composeApp\build\compose\binaries\main\app\FaceFiles\FaceFiles.exe"
+          $p = Start-Process -FilePath $exe -PassThru
+          Start-Sleep -Seconds 20
+          Add-Type -AssemblyName System.Windows.Forms, System.Drawing
+          $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+          $bmp = New-Object System.Drawing.Bitmap $b.Width, $b.Height
+          [System.Drawing.Graphics]::FromImage($bmp).CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
+          $bmp.Save("$PWD\ui-shot.png")
+          if ($p.HasExited) { Write-Host "UI process exited early, code $($p.ExitCode)"; exit 1 }
+          Write-Host "UI process still running after 20s"
+          Stop-Process -Id $p.Id -Force
 
       - name: Zip portable app
         shell: pwsh
         run: Compress-Archive -Path composeApp/build/compose/binaries/main/app/FaceFiles -DestinationPath FaceFiles-Windows-Portable.zip
-
       - uses: actions/upload-artifact@v4
         with:
           name: FaceFiles-Windows-Portable
           path: FaceFiles-Windows-Portable.zip
           if-no-files-found: error
 
-      # 2) Real installer (.exe). jpackage needs the WiX Toolset; if the runner image
-      #    ever drops it, this step is allowed to fail without failing the whole build.
+      # 4) Real installer (.exe). Needs WiX; allowed to fail without failing the build.
       - name: Build installer (.exe)
         id: installer
         continue-on-error: true
-        run: gradle :composeApp:packageExe --stacktrace
-
+        shell: bash
+        run: gradle :composeApp:packageExe --stacktrace 2>&1 | tee installer.log
       - uses: actions/upload-artifact@v4
         if: steps.installer.outcome == 'success'
         with:
           name: FaceFiles-Windows-Installer
           path: composeApp/build/compose/binaries/main/exe/*.exe
           if-no-files-found: warn
+
+      - name: Publish report
+        if: always()
+        shell: bash
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: bash scripts/publish-report.sh windows build.log selftest.txt ui-shot.png installer.log
