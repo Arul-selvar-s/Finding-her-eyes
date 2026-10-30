@@ -1,0 +1,5 @@
+onnxruntime: native library loaded
+scan:   ScanStats(filesSeen=6, directoriesSeen=4, added=6, unchanged=0, removed=0, unreadableDirectories=0, durationMs=198)
+counts: [CategoryCount(category=DOCUMENT, count=1), CategoryCount(category=PHOTO, count=5)]
+rescan: ScanStats(filesSeen=6, directoriesSeen=4, added=0, unchanged=6, removed=0, unreadableDirectories=0, durationMs=8)
+RESULT: OK
