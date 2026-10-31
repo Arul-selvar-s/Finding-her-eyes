@@ -34,6 +34,11 @@ class FacePipelineTest {
     private lateinit var fileScanner: FileScanner
     private lateinit var faceScanner: FaceScanner
 
+    private companion object {
+        // obama x2, biden, two_people (two faces), alex, lin  =>  7 faces
+        val ALBUM = listOf("obama.jpg", "obama2.jpg", "biden.jpg", "two_people.jpg", "alex-lacamoire.png", "lin-manuel-miranda.png")
+    }
+
     @BeforeTest
     fun setUp() {
         base = Files.createTempDirectory("facefiles-faces").toFile()
@@ -42,7 +47,7 @@ class FacePipelineTest {
         search = FaceSearch(db.faceDao(), db.fileDao())
         fileScanner = FileScanner(db.fileDao(), { listOf(root) })
         faceScanner = FaceScanner(db.fileDao(), TestFaces.decoder, { TestFaces.engine })
-        for (n in listOf("obama.jpg", "obama2.jpg", "biden.jpg", "obama_and_biden.jpg")) {
+        for (n in ALBUM) {
             File(TestFaces.path(n)).copyTo(File(root, "album/$n").also { it.parentFile.mkdirs() })
         }
         File(root, "notes.txt").writeText("not an image")
@@ -62,30 +67,33 @@ class FacePipelineTest {
     private fun names(matches: List<Pair<app.facefiles.data.FileEntity, app.facefiles.face.FileMatch>>) =
         matches.map { it.first.name }.toSet()
 
+    private suspend fun filesOfPerson(sourcePhoto: String, threshold: Float = 0.363f): Set<String> {
+        val face = search.facesOfFile(File(root, "album/$sourcePhoto").path).single()
+        val query = checkNotNull(search.vectorOf(face.id))
+        val found = search.searchFiles(query, threshold)
+        found.forEach { println("query=$sourcePhoto -> ${it.first.name} sim=${it.second.similarity}") }
+        return names(found)
+    }
+
     @Test
     fun finds_every_file_containing_the_selected_person() = runBlocking {
         indexAndScanFaces()
         val dao = db.fileDao()
-        val states = listOf("obama.jpg", "obama2.jpg", "biden.jpg", "obama_and_biden.jpg").map { n ->
-            dao.faceStateOf(File(root, "album/$n").path)
-        }
-        assertTrue(states.all { it == FaceScanState.DONE }, "all photos scanned: $states")
+        val states = ALBUM.map { n -> n to dao.faceStateOf(File(root, "album/$n").path) }
+        assertTrue(states.all { it.second == FaceScanState.DONE }, "all photos scanned: $states")
         assertEquals(FaceScanState.SKIPPED, dao.faceStateOf(File(root, "notes.txt").path))
-        assertEquals(5, db.faceDao().count(), "1 + 1 + 1 + 2 faces")
+        assertEquals(7, db.faceDao().count(), "1 + 1 + 1 + 2 + 1 + 1 faces")
 
         // View A/B: the faces of one photo, as thumbnails
-        val faces = search.facesOfFile(File(root, "album/obama.jpg").path)
-        assertEquals(1, faces.size)
-        assertTrue(faces.single().thumb.isNotEmpty(), "face thumbnail stored")
+        val faces = search.facesOfFile(File(root, "album/two_people.jpg").path)
+        assertEquals(2, faces.size)
+        assertTrue(faces.all { it.thumb.isNotEmpty() }, "face thumbnails stored")
 
-        // View C/D: select that face -> everything containing him
-        val query = checkNotNull(search.vectorOf(faces.single().id))
-        val found = search.searchFiles(query, 0.363f)
-        found.forEach { println("match ${it.first.name} sim=${it.second.similarity}") }
-        val result = names(found)
-        assertTrue("obama.jpg" in result && "obama2.jpg" in result && "obama_and_biden.jpg" in result, "found: $result")
-        assertTrue("biden.jpg" !in result, "must not return the other person: $result")
-        assertEquals("obama.jpg", found.first().first.name, "the photo the face came from is the best match")
+        // View C/D: pick a face -> every file with that person (and nobody else)
+        assertEquals(setOf("obama.jpg", "obama2.jpg"), filesOfPerson("obama.jpg"))
+        assertEquals(setOf("alex-lacamoire.png", "two_people.jpg"), filesOfPerson("alex-lacamoire.png"))
+        assertEquals(setOf("lin-manuel-miranda.png", "two_people.jpg"), filesOfPerson("lin-manuel-miranda.png"))
+        assertEquals(setOf("biden.jpg"), filesOfPerson("biden.jpg"))
     }
 
     @Test
@@ -93,9 +101,8 @@ class FacePipelineTest {
         indexAndScanFaces()
         val people = search.people(threshold = 0.4f, minFaces = 2)
         people.forEach { println("person faces=${it.faceCount} files=${it.fileCount}") }
-        assertEquals(2, people.size, "Obama and Biden")
-        assertEquals(3, people[0].faceCount)
-        assertEquals(2, people[1].faceCount)
+        assertEquals(3, people.size, "Obama, Alex and Lin each appear twice; Biden once")
+        assertTrue(people.all { it.faceCount == 2 })
     }
 
     @Test
@@ -131,7 +138,6 @@ class FacePipelineTest {
         assertTrue(pdfFaces.isNotEmpty(), "a face embedded in a PDF page must be found")
         assertEquals(FaceSource.PDF_IMAGE, pdfFaces.first().source)
 
-        val query = checkNotNull(search.vectorOf(search.facesOfFile(File(root, "album/obama.jpg").path).single().id))
-        assertTrue("report.pdf" in names(search.searchFiles(query, 0.363f)), "PDF must show up in the person's results")
+        assertTrue("report.pdf" in filesOfPerson("obama.jpg"), "PDF must show up in the person's results")
     }
 }

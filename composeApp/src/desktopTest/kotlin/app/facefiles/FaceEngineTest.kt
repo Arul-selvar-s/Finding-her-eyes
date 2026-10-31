@@ -62,7 +62,7 @@ class FaceEngineTest {
 
     @Test
     fun detects_both_faces_in_a_group_photo() {
-        val faces = TestFaces.engine.detect(TestFaces.image("obama_and_biden.jpg"))
+        val faces = TestFaces.engine.detect(TestFaces.image("two_people.jpg"))
         faces.forEach { println("group face: box=(${it.x1},${it.y1},${it.x2},${it.y2}) score=${it.score}") }
         assertEquals(2, faces.size)
     }
