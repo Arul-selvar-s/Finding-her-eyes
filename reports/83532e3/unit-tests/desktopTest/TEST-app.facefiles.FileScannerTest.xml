@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.facefiles.FileScannerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:18:07" hostname="runnervm48cm3" time="1.768">
+  <properties/>
+  <testcase name="rescan_of_unchanged_tree_is_a_noop()[desktop]" classname="app.facefiles.FileScannerTest" time="0.025"/>
+  <testcase name="removes_deleted_files_and_folders()[desktop]" classname="app.facefiles.FileScannerTest" time="0.021"/>
+  <testcase name="deleting_a_file_cascades_to_its_faces()[desktop]" classname="app.facefiles.FileScannerTest" time="0.019"/>
+  <testcase name="unreadable_folder_keeps_its_old_rows()[desktop]" classname="app.facefiles.FileScannerTest" time="0.018"/>
+  <testcase name="handles_fifteen_thousand_files()[desktop]" classname="app.facefiles.FileScannerTest" time="1.539"/>
+  <testcase name="detects_modified_files()[desktop]" classname="app.facefiles.FileScannerTest" time="0.023"/>
+  <testcase name="unicode_and_emoji_paths_roundtrip()[desktop]" classname="app.facefiles.FileScannerTest" time="0.023"/>
+  <testcase name="indexes_and_categorizes_and_skips_hidden()[desktop]" classname="app.facefiles.FileScannerTest" time="0.024"/>
+  <testcase name="missing_root_is_harmless()[desktop]" classname="app.facefiles.FileScannerTest" time="0.015"/>
+  <testcase name="modifying_a_file_resets_its_faces()[desktop]" classname="app.facefiles.FileScannerTest" time="0.015"/>
+  <testcase name="symlinks_are_not_followed()[desktop]" classname="app.facefiles.FileScannerTest" time="0.036"/>
+  <system-out><![CDATA[15k files: first scan 323 ms
+15k files: rescan 166 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

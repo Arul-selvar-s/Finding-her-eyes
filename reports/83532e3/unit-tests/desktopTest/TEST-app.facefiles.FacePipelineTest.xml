@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.facefiles.FacePipelineTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:18:04" hostname="runnervm48cm3" time="2.932">
+  <properties/>
+  <testcase name="rescanning_faces_is_idempotent_and_changed_files_are_rescanned()[desktop]" classname="app.facefiles.FacePipelineTest" time="0.934"/>
+  <testcase name="finds_a_person_inside_a_pdf()[desktop]" classname="app.facefiles.FacePipelineTest" time="1.084"/>
+  <testcase name="finds_every_file_containing_the_selected_person()[desktop]" classname="app.facefiles.FacePipelineTest" time="0.428"/>
+  <testcase name="groups_faces_into_people()[desktop]" classname="app.facefiles.FacePipelineTest" time="0.482"/>
+  <system-out><![CDATA[faces found inside the PDF: 1
+query=obama.jpg -> obama.jpg sim=1.0000001
+query=obama.jpg -> report.pdf sim=0.9754437
+query=obama.jpg -> two_people.jpg sim=0.78671855
+query=obama.jpg -> obama2.jpg sim=0.7434525
+query=obama.jpg -> obama.jpg sim=1.0000001
+query=obama.jpg -> two_people.jpg sim=0.78671855
+query=obama.jpg -> obama2.jpg sim=0.7434525
+query=biden.jpg -> biden.jpg sim=0.99999994
+query=biden.jpg -> two_people.jpg sim=0.8971878
+query=alex-lacamoire.png -> alex-lacamoire.png sim=0.9999999
+query=lin-manuel-miranda.png -> lin-manuel-miranda.png sim=0.9999999
+person faces=3 files=3
+person faces=2 files=2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
