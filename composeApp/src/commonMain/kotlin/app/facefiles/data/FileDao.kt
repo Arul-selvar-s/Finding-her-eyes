@@ -2,9 +2,9 @@ package app.facefiles.data
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import androidx.room.Upsert
 import app.facefiles.domain.FaceScanState
 import app.facefiles.domain.FileCategory
 import kotlinx.coroutines.flow.Flow
@@ -17,7 +17,12 @@ abstract class FileDao {
 
     // ---------- scanner writes ----------
 
-    @Upsert
+    /**
+     * Insert-or-replace. A replaced row is a changed file, whose old faces must go anyway (the
+     * foreign key cascades). Deliberately NOT @Upsert: that relies on parsing the driver's
+     * constraint-error text, which the bundled SQLite driver does not reliably provide.
+     */
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun upsertAll(files: List<FileEntity>)
 
     @Query("SELECT path, sizeBytes, modifiedAt FROM files WHERE parentPath = :dir")

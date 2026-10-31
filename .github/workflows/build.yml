@@ -10,6 +10,10 @@ concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash   # = bash -eo pipefail, so `gradle ... | tee log` still fails the step
+
 permissions:
   contents: write   # lets jobs push logs/screenshots to the `ci-reports` branch
 

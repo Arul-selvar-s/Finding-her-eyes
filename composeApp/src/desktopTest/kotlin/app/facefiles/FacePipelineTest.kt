@@ -35,7 +35,7 @@ class FacePipelineTest {
     private lateinit var faceScanner: FaceScanner
 
     private companion object {
-        // obama x2, biden, two_people (two faces), alex, lin  =>  7 faces
+        // obama x2, biden, two_people (Obama + Biden), alex, lin  =>  7 faces
         val ALBUM = listOf("obama.jpg", "obama2.jpg", "biden.jpg", "two_people.jpg", "alex-lacamoire.png", "lin-manuel-miranda.png")
     }
 
@@ -86,14 +86,14 @@ class FacePipelineTest {
 
         // View A/B: the faces of one photo, as thumbnails
         val faces = search.facesOfFile(File(root, "album/two_people.jpg").path)
-        assertEquals(2, faces.size)
+        assertEquals(2, faces.size, "Obama and Biden")
         assertTrue(faces.all { it.thumb.isNotEmpty() }, "face thumbnails stored")
 
         // View C/D: pick a face -> every file with that person (and nobody else)
-        assertEquals(setOf("obama.jpg", "obama2.jpg"), filesOfPerson("obama.jpg"))
-        assertEquals(setOf("alex-lacamoire.png", "two_people.jpg"), filesOfPerson("alex-lacamoire.png"))
-        assertEquals(setOf("lin-manuel-miranda.png", "two_people.jpg"), filesOfPerson("lin-manuel-miranda.png"))
-        assertEquals(setOf("biden.jpg"), filesOfPerson("biden.jpg"))
+        assertEquals(setOf("obama.jpg", "obama2.jpg", "two_people.jpg"), filesOfPerson("obama.jpg"))
+        assertEquals(setOf("biden.jpg", "two_people.jpg"), filesOfPerson("biden.jpg"))
+        assertEquals(setOf("alex-lacamoire.png"), filesOfPerson("alex-lacamoire.png"))
+        assertEquals(setOf("lin-manuel-miranda.png"), filesOfPerson("lin-manuel-miranda.png"))
     }
 
     @Test
@@ -101,8 +101,8 @@ class FacePipelineTest {
         indexAndScanFaces()
         val people = search.people(threshold = 0.4f, minFaces = 2)
         people.forEach { println("person faces=${it.faceCount} files=${it.fileCount}") }
-        assertEquals(3, people.size, "Obama, Alex and Lin each appear twice; Biden once")
-        assertTrue(people.all { it.faceCount == 2 })
+        assertEquals(2, people.size, "Obama (3 faces) and Biden (2 faces); Alex and Lin appear once")
+        assertEquals(listOf(3, 2), people.map { it.faceCount })
     }
 
     @Test
