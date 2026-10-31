@@ -1,0 +1,21 @@
+E2E ok:   permission screen shown
+UI texts: ['FaceFiles', 'Scan files', 'Done: 13 files, 13 new/changed, 0 removed (268 ms)', 'Find faces', 'Scan faces to search by person', 'Photos (9)', 'Videos (1)', 'Audio (1)', 'Documents (1)']
+counts: photos=9 videos=1 audio=1 documents=1
+E2E ok:   counts as expected
+E2E ok:   face scan finished
+face status: ['FaceFiles', 'Find faces', 'Faces: done · 5 found']
+E2E ok:   viewer shows detected face
+person results: 3 items
+E2E ok:   person search returned 3 items
+E2E ok:   long-press starts selection
+E2E ok:   select all -> 3 selected
+E2E ok:   COPY: files exist in Download
+E2E ok:   COPY: originals kept
+E2E ok:   MOVE: source folder emptied of obama files
+E2E ok:   MOVE: files arrived in Download
+E2E ok:   MOVE: person search still finds 3 items (faces followed the files)
+E2E ok:   DELETE: files removed from disk
+E2E ok:   DELETE: results now empty
+E2E ok:   no crash in logcat
+E2E ok:   process alive
+E2E exit=0
