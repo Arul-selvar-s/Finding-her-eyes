@@ -1,0 +1,7 @@
+E2E ok:   permission screen shown
+UI texts: ['FaceFiles', 'Scan files', 'Done: 9 files, 9 new/changed, 0 removed (177 ms)', 'Photos (5)', 'Videos (1)', 'Audio (1)', 'Documents (1)']
+counts: photos=5 videos=1 audio=1 documents=1
+E2E ok:   counts as expected
+E2E ok:   no crash in logcat
+E2E ok:   process alive
+E2E exit=0
