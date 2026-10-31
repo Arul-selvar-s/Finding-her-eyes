@@ -114,7 +114,69 @@ PYEOF
   fi
 fi
 
-# 5) crash check
+# 5) real file operations from the person-results screen: copy, move (faces must follow), delete
+tap_text() { # tap_text <dump> <text> [exact]
+  local xy; xy=$(python3 scripts/ui_find.py "$OUT/$1.xml" "$2" ${3:-}) || { fail "cannot find '$2' on $1"; return 1; }
+  adb shell input tap $xy
+}
+results_count() { # prints N from "N items with"
+  dump "$1"; python3 - "$OUT/$1.xml" <<'PYX'
+import re, sys
+import xml.etree.ElementTree as ET
+for n in ET.parse(sys.argv[1]).iter("node"):
+    m = re.match(r"(\d+) items with", n.get("text") or "")
+    if m: print(m.group(1)); break
+else: print(-1)
+PYX
+}
+if [ -n "${FACE:-}" ]; then
+  TXY=$(find_xy ui6-results "obama.jpg") || TXY=""
+  if [ -z "$TXY" ]; then
+    fail "result tile not found"
+  else
+    adb shell input swipe $TXY $TXY 900; sleep 2
+    dump ui7-selected
+    find_xy ui7-selected "1 selected" >/dev/null && ok "long-press starts selection" || fail "long-press did not start selection"
+    tap_text ui7-selected "Select all"; sleep 1; dump ui7b
+    find_xy ui7b "3 selected" >/dev/null && ok "select all -> 3 selected" || fail "select all"
+
+    # ---- COPY into /Download ----
+    tap_text ui7b "Copy" exact; sleep 2; dump ui8-picker; shot 8-picker
+    tap_text ui8-picker "/storage/emulated/0"; sleep 2; dump ui8b
+    tap_text ui8b "Download" exact; sleep 2; dump ui8c
+    tap_text ui8c "Copy here" exact; sleep 5; dump ui9-copied; shot 9-copied
+    if adb shell ls /sdcard/Download | tr -d '\r' | grep -qx "obama.jpg" && adb shell ls /sdcard/Download | tr -d '\r' | grep -qx "two_people.jpg"; then
+      ok "COPY: files exist in Download"
+    else fail "COPY: files missing in Download"; fi
+    adb shell ls /sdcard/Pictures/E2E/people | tr -d '\r' | grep -qx "obama.jpg" && ok "COPY: originals kept" || fail "COPY: originals gone"
+
+    # ---- MOVE into /Download (names collide -> "(1)") ----
+    adb shell input tap $(python3 scripts/ui_find.py "$OUT/ui9-copied.xml" "Select all" 2>/dev/null || echo "") >/dev/null 2>&1
+    TXY=$(find_xy ui9-copied "obama.jpg") || TXY=""
+    adb shell input swipe $TXY $TXY 900; sleep 2; dump ui10a
+    tap_text ui10a "Select all"; sleep 1; dump ui10b
+    tap_text ui10b "Move" exact; sleep 2; dump ui10c
+    tap_text ui10c "/storage/emulated/0"; sleep 2; dump ui10d
+    tap_text ui10d "Download" exact; sleep 2; dump ui10e
+    tap_text ui10e "Move here" exact; sleep 5; dump ui11-moved; shot 11-moved
+    adb shell ls /sdcard/Pictures/E2E/people | tr -d '\r' | grep -q "obama" && fail "MOVE: originals still in source folder" || ok "MOVE: source folder emptied of obama files"
+    adb shell ls /sdcard/Download | tr -d '\r' | grep -q "(1)" && ok "MOVE: files arrived in Download" || fail "MOVE: files not in Download"
+    N=$(results_count ui11b-moved)
+    [ "$N" = "3" ] && ok "MOVE: person search still finds 3 items (faces followed the files)" || fail "MOVE: person search shows $N items after move"
+
+    # ---- DELETE ----
+    TXY=$(find_xy ui11b-moved "obama") || TXY=""
+    adb shell input swipe $TXY $TXY 900; sleep 2; dump ui12a
+    tap_text ui12a "Select all"; sleep 1; dump ui12b
+    tap_text ui12b "Delete" exact; sleep 2; dump ui12c; shot 12-confirm
+    tap_text ui12c "Delete" exact; sleep 4; dump ui13-deleted; shot 13-deleted
+    adb shell ls /sdcard/Download | tr -d '\r' | grep -q "(1)" && fail "DELETE: moved files still on disk" || ok "DELETE: files removed from disk"
+    N=$(results_count ui13b-deleted)
+    [ "$N" = "0" ] && ok "DELETE: results now empty" || fail "DELETE: results show $N items"
+  fi
+fi
+
+# 6) crash check
 adb logcat -d > "$OUT/logcat.txt"
 grep -n "FATAL EXCEPTION" "$OUT/logcat.txt" | head -5 && fail "app crashed (see logcat)" || ok "no crash in logcat"
 adb shell pidof app.facefiles >/dev/null && ok "process alive" || fail "process not running"
