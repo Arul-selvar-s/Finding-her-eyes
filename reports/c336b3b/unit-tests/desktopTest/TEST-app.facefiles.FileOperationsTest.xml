@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.facefiles.FileOperationsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:10:53" hostname="runnervm48cm3" time="0.158">
+  <properties/>
+  <testcase name="move_relocates_file_row_and_faces_follow()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.037"/>
+  <testcase name="move_folder_rebases_every_row_with_emoji_names()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.051"/>
+  <testcase name="rename_updates_row_extension_category_and_faces()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.012"/>
+  <testcase name="move_refuses_same_folder_and_into_itself()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.003"/>
+  <testcase name="copy_creates_file_and_index_row_and_keeps_original()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.013"/>
+  <testcase name="list_and_create_folder()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.004"/>
+  <testcase name="rename_refuses_existing_name()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.002"/>
+  <testcase name="delete_removes_files_folders_rows_and_faces()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.02"/>
+  <testcase name="copy_to_same_folder_gets_a_unique_name()[desktop]" classname="app.facefiles.FileOperationsTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

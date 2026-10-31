@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.facefiles.FaceEngineTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-31T02:10:48" hostname="runnervm48cm3" time="1.948">
+  <properties/>
+  <testcase name="alignment_is_robust_to_image_flip_and_rescale()[desktop]" classname="app.facefiles.FaceEngineTest" time="1.392"/>
+  <testcase name="same_person_is_closer_than_a_different_person()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.294"/>
+  <testcase name="detects_both_faces_in_a_group_photo()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.066"/>
+  <testcase name="embeddings_are_128d_and_unit_length()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.091"/>
+  <testcase name="detects_exactly_one_face_in_a_portrait()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.077"/>
+  <testcase name="finds_no_face_in_a_blank_image()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.019"/>
+  <testcase name="models_load_and_report_io()[desktop]" classname="app.facefiles.FaceEngineTest" time="0.002"/>
+  <system-out><![CDATA[COSINE flipped=0.94150126 small=0.9693388 other=0.14360821
+COSINE same(obama,obama2)=0.7434525  different(obama,biden)=0.14360821  different(obama2,biden)=0.29257408
+group face: box=(240.1752,31.219095,383.3614,228.95822) score=0.92909116
+group face: box=(787.6587,50.903713,935.76685,254.15796) score=0.92013764
+obama.jpg face: box=(371.4975,91.82732,612.1122,423.08154) score=0.94735545 image=910x1137
+MODEL IO:
+detector: inputs=input [1, 3, 640, 640]; outputs=cls_8 [1, 6400, 1]; cls_16 [1, 1600, 1]; cls_32 [1, 400, 1]; obj_8 [1, 6400, 1]; obj_16 [1, 1600, 1]; obj_32 [1, 400, 1]; bbox_8 [1, 6400, 4]; bbox_16 [1, 1600, 4]; bbox_32 [1, 400, 4]; kps_8 [1, 6400, 10]; kps_16 [1, 1600, 10]; kps_32 [1, 400, 10]; 
+recognizer: inputs=data [1, 3, 112, 112]; outputs=fc1 [1, 128]; 
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
