@@ -8,6 +8,8 @@ import com.drew.metadata.exif.ExifIFD0Directory
 import org.apache.pdfbox.Loader
 import org.apache.pdfbox.rendering.ImageType
 import org.apache.pdfbox.rendering.PDFRenderer
+import org.bytedeco.javacv.FFmpegFrameGrabber
+import org.bytedeco.javacv.Java2DFrameConverter
 import java.awt.image.BufferedImage
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -45,10 +47,29 @@ class DesktopMediaDecoder : MediaDecoder {
         null
     }
 
-    // Video frames on desktop are added together with the ffmpeg-based sampler.
-    override fun videoDurationMs(path: String): Long = 0L
+    override fun videoDurationMs(path: String): Long =
+        withGrabber(path) { it.lengthInTime / 1000L } ?: 0L
 
-    override fun videoFrame(path: String, timeMs: Long, maxSide: Int): DecodedImage? = null
+    override fun videoFrame(path: String, timeMs: Long, maxSide: Int): DecodedImage? =
+        withGrabber(path) { grabber ->
+            if (timeMs > 0) grabber.timestamp = timeMs * 1000L
+            val frame = grabber.grabImage() ?: return@withGrabber null
+            val image = Java2DFrameConverter().convert(frame) ?: return@withGrabber null
+            ImageOps.fitWithin(image.toDecoded(), maxSide)
+        }
+
+    private fun <T> withGrabber(path: String, block: (FFmpegFrameGrabber) -> T?): T? = try {
+        val grabber = FFmpegFrameGrabber(path)
+        try {
+            grabber.start()
+            block(grabber)
+        } finally {
+            try { grabber.stop() } catch (e: Throwable) { /* ignore */ }
+            try { grabber.release() } catch (e: Throwable) { /* ignore */ }
+        }
+    } catch (e: Throwable) {
+        null
+    }
 
     override fun pdfPageCount(path: String): Int = try {
         Loader.loadPDF(File(path)).use { it.numberOfPages }

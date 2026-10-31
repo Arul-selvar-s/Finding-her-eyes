@@ -1,5 +1,6 @@
 package app.facefiles.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,6 +17,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -54,6 +56,7 @@ private enum class Tab(val label: String, val category: FileCategory?) {
     AUDIO("Audio", FileCategory.AUDIO),
     DOCUMENTS("Documents", FileCategory.DOCUMENT),
     FOLDERS("All folders", null),
+    PEOPLE("People", null),
 }
 
 private enum class Pending { COPY, MOVE, DELETE, RENAME }
@@ -74,6 +77,10 @@ private fun AppRoot(services: AppServices) {
     var folderItems by remember { mutableStateOf<List<UiItem>>(emptyList()) }
     var scanning by remember { mutableStateOf(false) }
     var lastEvent by remember { mutableStateOf<ScanEvent?>(null) }
+    var personQuery by remember { mutableStateOf<PersonQuery?>(null) }
+    var threshold by remember { mutableStateOf(0.40f) }
+
+    val faceProgress by services.faceScan.progress.collectAsState()
 
     val countsFlow = remember { services.fileDao.observeCounts() }
     val counts by countsFlow.collectAsState(initial = emptyList<CategoryCount>())
@@ -83,7 +90,18 @@ private fun AppRoot(services: AppServices) {
     }
     val files by filesFlow.collectAsState(initial = emptyList<FileEntity>())
     val items = remember(files) { files.map { it.toUiItem() } }
-    val visible = if (tab == Tab.FOLDERS) folderItems else items
+
+    // Everything that contains the selected person, best match first.
+    val personResults by produceState<List<UiItem>>(emptyList(), personQuery, threshold, refreshKey, faceProgress.facesFound) {
+        val q = personQuery
+        value = if (q == null) emptyList() else services.faceSearch.searchFiles(q.vector, threshold).map { it.first.toUiItem() }
+    }
+
+    val visible = when {
+        personQuery != null -> personResults
+        tab == Tab.FOLDERS -> folderItems
+        else -> items
+    }
 
     fun toggle(path: String) {
         selection = if (path in selection) selection - path else selection + path
@@ -100,6 +118,7 @@ private fun AppRoot(services: AppServices) {
             status = result.summary(past, base)
             busy = false
             selection = emptySet()
+            services.faceSearch.invalidate()
             refreshKey++
         }
     }
@@ -119,13 +138,48 @@ private fun AppRoot(services: AppServices) {
         }
     }
 
+    fun openPerson(vector: FloatArray) {
+        viewer = null
+        selection = emptySet()
+        personQuery = PersonQuery("this person", vector)
+    }
+
     PlatformBackHandler(enabled = viewer == null && selection.isNotEmpty()) { selection = emptySet() }
-    PlatformBackHandler(enabled = viewer == null && selection.isEmpty() && tab == Tab.FOLDERS && folderPath != null) {
+    PlatformBackHandler(enabled = viewer == null && selection.isEmpty() && personQuery == null && tab == Tab.FOLDERS && folderPath != null) {
         val here = folderPath
         folderPath = if (here == null || services.ops.roots().contains(here)) null else services.ops.parentOf(here)
     }
+    PlatformBackHandler(enabled = viewer == null && selection.isEmpty() && personQuery != null) { personQuery = null }
+
+    val selectionBar: @Composable () -> Unit = {
+        SelectionBar(
+            count = selection.size,
+            canRename = selection.size == 1,
+            onCopy = { pending = Pending.COPY },
+            onMove = { pending = Pending.MOVE },
+            onRename = { pending = Pending.RENAME },
+            onDelete = { pending = Pending.DELETE },
+            onSelectAll = { selection = visible.map { it.path }.toSet() },
+            onClear = { selection = emptySet() },
+        )
+    }
+    val statusLine: @Composable () -> Unit = {
+        if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
+        status?.let { message ->
+            Text(
+                "$message  (tap to dismiss)",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickableNoRipple { status = null }
+                    .padding(horizontal = 16.dp, vertical = 2.dp),
+            )
+        }
+    }
 
     Box(Modifier.fillMaxSize()) {
+        // ---------------- main screen ----------------
         Column(Modifier.fillMaxSize().safeDrawingPadding()) {
             if (selection.isEmpty()) {
                 Header(
@@ -142,46 +196,27 @@ private fun AppRoot(services: AppServices) {
                             }
                         }
                     },
-                )
+                ) {
+                    FaceScanBar(faceProgress, onStart = { services.faceScan.start() }, onStop = { services.faceScan.stop() })
+                }
             } else {
-                SelectionBar(
-                    count = selection.size,
-                    canRename = selection.size == 1,
-                    onCopy = { pending = Pending.COPY },
-                    onMove = { pending = Pending.MOVE },
-                    onRename = { pending = Pending.RENAME },
-                    onDelete = { pending = Pending.DELETE },
-                    onSelectAll = { selection = visible.map { it.path }.toSet() },
-                    onClear = { selection = emptySet() },
-                )
+                selectionBar()
             }
-
-            if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-            status?.let { message ->
-                Text(
-                    "$message  (tap to dismiss)",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickableNoRipple { status = null }
-                        .padding(horizontal = 16.dp, vertical = 2.dp),
-                )
-            }
+            statusLine()
 
             Row(
                 modifier = Modifier.horizontalScroll(rememberScrollState()).padding(horizontal = 12.dp, vertical = 6.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Tab.entries.forEach { t ->
-                    val n = t.category?.let { c -> counts.firstOrNull { it.category == c }?.count } ?: 0
+                    val n = t.category?.let { c -> counts.firstOrNull { it.category == c }?.count }
                     FilterChip(
                         selected = t == tab,
                         onClick = {
                             tab = t
                             selection = emptySet()
                         },
-                        label = { Text(if (t.category == null) t.label else "${t.label} ($n)") },
+                        label = { Text(if (n == null) t.label else "${t.label} ($n)") },
                     )
                 }
             }
@@ -212,16 +247,68 @@ private fun AppRoot(services: AppServices) {
                         onClick = { item, siblings -> onItemClick(item, siblings) },
                         onLongClick = { toggle(it.path) },
                     )
+                    Tab.PEOPLE -> PeopleScreen(
+                        services = services,
+                        refreshKey = refreshKey,
+                        scanRunning = faceProgress.running,
+                        onPerson = { openPerson(it.centroid) },
+                    )
                 }
             }
         }
 
+        // ---------------- "everything with this person" ----------------
+        personQuery?.let { query ->
+            Column(
+                Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).safeDrawingPadding(),
+            ) {
+                if (selection.isEmpty()) {
+                    Column(Modifier.padding(horizontal = 8.dp, vertical = 4.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            TextButton(onClick = { personQuery = null }) { Text("← Back") }
+                            Text(
+                                "${personResults.size} items with ${query.title}",
+                                style = MaterialTheme.typography.titleMedium,
+                            )
+                        }
+                        Row(Modifier.padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                            Text("Match", style = MaterialTheme.typography.bodySmall)
+                            Slider(
+                                value = threshold,
+                                onValueChange = { threshold = it },
+                                valueRange = 0.25f..0.75f,
+                                modifier = Modifier.weight(1f).padding(horizontal = 8.dp),
+                            )
+                            Text(if (threshold < 0.36f) "loose" else if (threshold < 0.5f) "normal" else "strict", style = MaterialTheme.typography.bodySmall)
+                        }
+                    }
+                } else {
+                    selectionBar()
+                }
+                statusLine()
+                ItemGrid(
+                    items = personResults,
+                    services = services,
+                    selection = selection,
+                    onClick = { onItemClick(it, personResults) },
+                    onLongClick = { toggle(it.path) },
+                    modifier = Modifier.weight(1f),
+                )
+            }
+        }
+
+        // ---------------- full-screen viewer ----------------
         viewer?.let { request ->
             ViewerScreen(
                 items = request.items,
                 startIndex = request.index,
                 services = services,
                 onClose = { viewer = null },
+                extraActions = { current ->
+                    FacesStrip(current, services, faceProgress.processed) { faceId ->
+                        scope.launch { services.faceSearch.vectorOf(faceId)?.let { openPerson(it) } }
+                    }
+                },
             )
         }
     }
@@ -273,7 +360,7 @@ private fun AppRoot(services: AppServices) {
 }
 
 @Composable
-private fun Header(scanning: Boolean, lastEvent: ScanEvent?, onScan: () -> Unit) {
+private fun Header(scanning: Boolean, lastEvent: ScanEvent?, onScan: () -> Unit, faceBar: @Composable () -> Unit) {
     Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
         Text("FaceFiles", style = MaterialTheme.typography.headlineSmall)
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -286,6 +373,7 @@ private fun Header(scanning: Boolean, lastEvent: ScanEvent?, onScan: () -> Unit)
                 overflow = TextOverflow.Ellipsis,
             )
         }
+        faceBar()
     }
 }
 

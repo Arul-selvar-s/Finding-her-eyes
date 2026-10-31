@@ -47,13 +47,14 @@ fun Thumbnail(
     sizePx: Int = 320,
     timeMs: Long = -1L,
     contentScale: ContentScale = ContentScale.Crop,
+    contentDescription: String? = null,
 ) {
     val bitmap by produceState<ImageBitmap?>(null, path, sizePx, timeMs) {
         value = services.thumbnails.load(path, category, sizePx, timeMs)
     }
     val b = bitmap
     if (b != null) {
-        Image(bitmap = b, contentDescription = null, modifier = modifier, contentScale = contentScale)
+        Image(bitmap = b, contentDescription = contentDescription, modifier = modifier, contentScale = contentScale)
     } else {
         Box(modifier.background(MaterialTheme.colorScheme.surfaceVariant))
     }
@@ -84,7 +85,7 @@ fun ItemTile(
                 Text(item.name, maxLines = 2, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodySmall)
             }
             item.isMedia -> {
-                Thumbnail(item.path, item.category, services, Modifier.fillMaxSize())
+                Thumbnail(item.path, item.category, services, Modifier.fillMaxSize(), contentDescription = item.name)
                 if (item.category == FileCategory.VIDEO) {
                     Text(
                         "▶",

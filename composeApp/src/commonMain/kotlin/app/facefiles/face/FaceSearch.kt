@@ -57,6 +57,8 @@ class FaceSearch(
 
     suspend fun facesOfFile(path: String): List<FaceInfo> = faceDao.facesOfFile(path)
 
+    suspend fun thumbOf(faceId: Long): ByteArray? = faceDao.thumbOf(faceId)
+
     suspend fun vectorOf(faceId: Long): FloatArray? = faceDao.embeddingOf(faceId)?.let { Embeddings.fromBytes(it) }
 
     /** Every file containing a face whose cosine similarity to [query] is >= [threshold], best first. */

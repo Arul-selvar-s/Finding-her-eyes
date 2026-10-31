@@ -10,6 +10,14 @@ plugins {
     alias(libs.plugins.room)
 }
 
+// ffmpeg natives are per-OS: Windows builds ship only the Windows ones, Linux CI only the Linux ones.
+val osName = System.getProperty("os.name").lowercase()
+val bytedecoPlatform = when {
+    "win" in osName -> "windows-x86_64"
+    "mac" in osName -> "macosx-arm64"
+    else -> "linux-x86_64"
+}
+
 kotlin {
     androidTarget {
         compilerOptions { jvmTarget.set(JvmTarget.JVM_17) }
@@ -67,6 +75,13 @@ kotlin {
             // (Android will use the platform PdfRenderer / MediaMetadataRetriever instead)
             implementation(libs.pdfbox)
             implementation(libs.metadata.extractor)
+
+            // Video frame sampling on desktop (Android uses MediaMetadataRetriever).
+            implementation("org.bytedeco:javacv:${libs.versions.javacv.get()}") { isTransitive = false }
+            implementation("org.bytedeco:javacpp:${libs.versions.javacv.get()}")
+            implementation("org.bytedeco:javacpp:${libs.versions.javacv.get()}:$bytedecoPlatform")
+            implementation("org.bytedeco:ffmpeg:${libs.versions.ffmpeg.get()}")
+            implementation("org.bytedeco:ffmpeg:${libs.versions.ffmpeg.get()}:$bytedecoPlatform")
         }
     }
 }

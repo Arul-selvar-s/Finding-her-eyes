@@ -4,6 +4,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import app.facefiles.data.buildDatabase
+import app.facefiles.face.FaceEngine
+import app.facefiles.face.FaceScanOptions
+import app.facefiles.face.FaceScanner
+import app.facefiles.face.FaceSearch
+import app.facefiles.face.ModelSource
 import app.facefiles.media.ThumbnailLoader
 import app.facefiles.ops.JvmFileOperations
 import app.facefiles.platform.DesktopMediaDecoder
@@ -23,11 +28,19 @@ fun main(args: Array<String>) {
     application {
         val services = remember {
             val database = buildDatabase(desktopDatabaseBuilder())
+            val decoder = DesktopMediaDecoder()
+            val engine = lazy {
+                FaceEngine(ModelSource { name ->
+                    FaceEngine::class.java.getResourceAsStream("/models/$name") ?: error("model $name is not bundled")
+                }, intraThreads = 4)
+            }
             AppServices(
                 fileDao = database.fileDao(),
                 indexer = FileScanner(database.fileDao(), ::desktopScanRoots, ScanOptions(workers = 8)),
                 ops = JvmFileOperations(database.fileDao(), ::desktopBrowseRoots, ::desktopOpen),
-                thumbnails = ThumbnailLoader(DesktopMediaDecoder()),
+                thumbnails = ThumbnailLoader(decoder),
+                faceScan = FaceScanner(database.fileDao(), decoder, { engine.value }, FaceScanOptions(workers = 3)),
+                faceSearch = FaceSearch(database.faceDao(), database.fileDao()),
             )
         }
         Window(onCloseRequest = ::exitApplication, title = "FaceFiles") {

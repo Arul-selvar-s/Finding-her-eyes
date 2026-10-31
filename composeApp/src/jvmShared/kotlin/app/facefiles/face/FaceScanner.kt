@@ -64,6 +64,7 @@ class FaceScanner(
     @Synchronized
     override fun start() {
         if (job?.isActive == true) return
+        state.value = FaceScanProgress(running = true) // clears any stale "finished" from a previous run
         job = scope.launch { scanAll() }
     }
 

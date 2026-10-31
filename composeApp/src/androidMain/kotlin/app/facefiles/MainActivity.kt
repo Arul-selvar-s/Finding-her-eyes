@@ -29,7 +29,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.facefiles.data.AppDatabase
 import app.facefiles.data.buildDatabase
+import app.facefiles.face.FaceEngine
+import app.facefiles.face.FaceScanOptions
+import app.facefiles.face.FaceScanner
+import app.facefiles.face.FaceSearch
+import app.facefiles.face.ModelSource
 import app.facefiles.media.ThumbnailLoader
+import app.facefiles.platform.AndroidFaceScanControl
 import app.facefiles.ops.JvmFileOperations
 import app.facefiles.platform.AndroidMediaDecoder
 import app.facefiles.platform.androidDatabaseBuilder
@@ -47,10 +53,16 @@ class MainActivity : ComponentActivity() {
     private lateinit var database: AppDatabase
     private lateinit var services: AppServices
 
+    /** Loaded on first use (a few hundred ms), then shared by every scan. */
+    private val engine: FaceEngine by lazy {
+        FaceEngine(ModelSource { name -> assets.open("models/$name") }, intraThreads = 2)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         database = buildDatabase(androidDatabaseBuilder(this))
         val dao = database.fileDao()
+        val decoder = AndroidMediaDecoder()
         services = AppServices(
             fileDao = dao,
             indexer = FileScanner(dao, { androidScanRoots(this) }, ScanOptions(workers = 4)),
@@ -60,7 +72,17 @@ class MainActivity : ComponentActivity() {
                 openHandler = { file -> openWithSystem(this, file) },
                 afterChange = { paths -> refreshMediaStore(this, paths) },
             ),
-            thumbnails = ThumbnailLoader(AndroidMediaDecoder()),
+            thumbnails = ThumbnailLoader(decoder),
+            faceScan = AndroidFaceScanControl(
+                this,
+                FaceScanner(
+                    fileDao = dao,
+                    decoder = decoder,
+                    engineProvider = { engine },
+                    options = FaceScanOptions(workers = 2),
+                ),
+            ),
+            faceSearch = FaceSearch(database.faceDao(), dao),
         )
         setContent {
             if (hasAccess) {

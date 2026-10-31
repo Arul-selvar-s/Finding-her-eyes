@@ -1,7 +1,9 @@
 package app.facefiles.ui
 
 import app.facefiles.data.FileDao
+import app.facefiles.domain.FaceScanControl
 import app.facefiles.domain.FileIndexer
+import app.facefiles.face.FaceSearch
 import app.facefiles.media.ThumbnailProvider
 import app.facefiles.ops.FileOperations
 
@@ -11,4 +13,6 @@ class AppServices(
     val indexer: FileIndexer,
     val ops: FileOperations,
     val thumbnails: ThumbnailProvider,
+    val faceScan: FaceScanControl,
+    val faceSearch: FaceSearch,
 )

@@ -11,6 +11,8 @@ onnxruntime = "1.20.0"
 pdfbox = "3.0.3"
 androidx-core = "1.15.0"
 metadata-extractor = "2.19.0"
+javacv = "1.5.11"
+ffmpeg = "7.1-1.5.11"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

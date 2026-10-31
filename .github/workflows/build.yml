@@ -91,6 +91,8 @@ jobs:
         with:
           name: FaceFiles-Android-APK
           path: apk
+      - name: Fetch test portraits
+        run: bash scripts/fetch-test-data.sh
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
