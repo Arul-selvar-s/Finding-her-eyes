@@ -37,3 +37,10 @@ data class CategoryCount(
     val category: FileCategory,
     val count: Int,
 )
+
+/** A file still waiting for the face pipeline. */
+data class PendingFile(
+    val path: String,
+    val category: FileCategory,
+    val extension: String,
+)

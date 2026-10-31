@@ -1,9 +1,11 @@
 package app.facefiles.data
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
+import app.facefiles.domain.FaceScanState
 import app.facefiles.domain.FileCategory
 import kotlinx.coroutines.flow.Flow
 
@@ -79,6 +81,37 @@ abstract class FileDao {
         resetFaces.chunked(SQL_CHUNK).forEach { deleteFacesFor(it) }
         removed.chunked(SQL_CHUNK).forEach { deleteByPaths(it) }
         upserts.chunked(SQL_CHUNK).forEach { upsertAll(it) }
+    }
+
+    // ---------- face pipeline ----------
+
+    @Query("SELECT COUNT(*) FROM files WHERE faceScanState = 'PENDING'")
+    abstract suspend fun pendingFaceCount(): Int
+
+    @Query("SELECT path, category, extension FROM files WHERE faceScanState = 'PENDING' ORDER BY modifiedAt DESC LIMIT :limit")
+    abstract suspend fun pendingFaceBatch(limit: Int): List<PendingFile>
+
+    @Query("UPDATE files SET faceScanState = :state WHERE path = :path")
+    abstract suspend fun setFaceState(path: String, state: FaceScanState)
+
+    @Query("SELECT faceScanState FROM files WHERE path = :path")
+    abstract suspend fun faceStateOf(path: String): FaceScanState?
+
+    @Query("UPDATE files SET faceScanState = 'PENDING' WHERE faceScanState = 'FAILED'")
+    abstract suspend fun retryFailedFaces(): Int
+
+    @Query("SELECT * FROM files WHERE path IN (:paths)")
+    abstract suspend fun filesByPaths(paths: List<String>): List<FileEntity>
+
+    @Insert
+    abstract suspend fun insertFaces(faces: List<FaceEntity>)
+
+    /** Replaces all faces of one file and records the outcome, atomically. */
+    @Transaction
+    open suspend fun saveFaces(path: String, faces: List<FaceEntity>, state: FaceScanState) {
+        deleteFacesFor(listOf(path))
+        if (faces.isNotEmpty()) insertFaces(faces)
+        setFaceState(path, state)
     }
 
     // ---------- UI reads ----------

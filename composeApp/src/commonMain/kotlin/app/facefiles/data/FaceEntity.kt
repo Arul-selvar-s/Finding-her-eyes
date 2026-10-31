@@ -49,5 +49,22 @@ data class FaceVector(
     val id: Long,
     val filePath: String,
     val kind: FaceKind,
+    val frameTimeMs: Long,
+    val pdfPage: Int,
+    val score: Float,
     val embedding: ByteArray,
+)
+
+/** Everything the UI needs about one face of one file (no embedding). */
+data class FaceInfo(
+    val id: Long,
+    val source: FaceSource,
+    val frameTimeMs: Long,
+    val pdfPage: Int,
+    val left: Float,
+    val top: Float,
+    val right: Float,
+    val bottom: Float,
+    val score: Float,
+    val thumb: ByteArray,
 )

@@ -7,3 +7,8 @@ local.properties
 *.apk
 *.exe
 *.msi
+
+# downloaded by scripts/fetch-models.sh and scripts/fetch-test-data.sh
+composeApp/src/androidMain/assets/models/
+composeApp/src/desktopMain/resources/models/
+composeApp/src/desktopTest/resources/faces/

@@ -13,7 +13,22 @@ interface FaceDao {
     @Query("SELECT COUNT(*) FROM faces")
     fun observeFaceCount(): Flow<Int>
 
-    /** Everything needed for an in-memory cosine-similarity search. */
-    @Query("SELECT id, filePath, kind, embedding FROM faces")
+    @Query("SELECT COUNT(*) FROM faces")
+    suspend fun count(): Int
+
+    /** Everything needed for the in-memory cosine-similarity search. */
+    @Query("SELECT id, filePath, kind, frameTimeMs, pdfPage, score, embedding FROM faces")
     suspend fun allVectors(): List<FaceVector>
+
+    @Query(
+        "SELECT id, source, frameTimeMs, pdfPage, `left`, `top`, `right`, `bottom`, score, thumb " +
+            "FROM faces WHERE filePath = :path ORDER BY frameTimeMs, pdfPage, `left`",
+    )
+    suspend fun facesOfFile(path: String): List<FaceInfo>
+
+    @Query("SELECT thumb FROM faces WHERE id = :id")
+    suspend fun thumbOf(id: Long): ByteArray?
+
+    @Query("SELECT embedding FROM faces WHERE id = :id")
+    suspend fun embeddingOf(id: Long): ByteArray?
 }

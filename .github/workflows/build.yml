@@ -29,6 +29,15 @@ jobs:
         with: { distribution: temurin, java-version: "${{ env.JAVA_VERSION }}" }
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
+      - uses: actions/cache@v4
+        with:
+          path: composeApp/src/desktopMain/resources/models
+          key: face-models-v1
+      - name: Fetch face models
+        shell: bash
+        run: bash scripts/fetch-models.sh
+      - name: Fetch test portraits
+        run: bash scripts/fetch-test-data.sh
       - name: Run tests
         run: gradle :composeApp:desktopTest --stacktrace --info 2>&1 | tee test.log
       - name: Publish report
@@ -47,6 +56,13 @@ jobs:
         with: { distribution: temurin, java-version: "${{ env.JAVA_VERSION }}" }
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
+      - uses: actions/cache@v4
+        with:
+          path: composeApp/src/desktopMain/resources/models
+          key: face-models-v1
+      - name: Fetch face models
+        shell: bash
+        run: bash scripts/fetch-models.sh
       - name: Build debug APK
         run: gradle :composeApp:assembleDebug --stacktrace 2>&1 | tee build.log
       - uses: actions/upload-artifact@v4
@@ -101,6 +117,17 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: "${{ env.GRADLE_VERSION }}" }
 
+      - uses: actions/cache@v4
+        with:
+          path: composeApp/src/desktopMain/resources/models
+          key: face-models-v1
+      - name: Fetch face models
+        shell: bash
+        run: bash scripts/fetch-models.sh
+      - name: Fetch test portraits
+        shell: bash
+        run: bash scripts/fetch-test-data.sh
+
       # 1) Portable build: a folder with FaceFiles.exe + a bundled Java runtime.
       - name: Build portable app
         shell: bash
@@ -114,7 +141,7 @@ jobs:
           1..5 | ForEach-Object { [IO.File]::WriteAllBytes("$PWD\sample\Pictures\sub\p$_.jpg", (New-Object byte[] 2048)) }
           [IO.File]::WriteAllBytes("$PWD\sample\Docs\a.pdf", (New-Object byte[] 512))
           $exe = "$PWD\composeApp\build\compose\binaries\main\app\FaceFiles\FaceFiles.exe"
-          $p = Start-Process -FilePath $exe -ArgumentList "--selftest","$PWD\sample","$PWD\selftest.txt" -PassThru -Wait
+          $p = Start-Process -FilePath $exe -ArgumentList "--selftest","$PWD\sample","$PWD\selftest.txt","$PWD\composeApp\src\desktopTest\resources\faces\obama.jpg" -PassThru -Wait
           if (Test-Path selftest.txt) { Get-Content selftest.txt } else { Write-Host "no selftest.txt produced" }
           if ($p.ExitCode -ne 0) { exit 1 }
 

@@ -6,6 +6,9 @@ import app.facefiles.data.AppDatabase
 import app.facefiles.data.buildDatabase
 import app.facefiles.domain.ScanEvent
 import app.facefiles.domain.ScanStats
+import app.facefiles.face.FaceEngine
+import app.facefiles.face.ModelSource
+import app.facefiles.platform.DesktopMediaDecoder
 import app.facefiles.scan.FileScanner
 import app.facefiles.scan.ScanOptions
 import kotlinx.coroutines.flow.first
@@ -25,6 +28,22 @@ internal fun runSelfTest(args: Array<String>): Int {
     return try {
         OrtEnvironment.getEnvironment() // throws if the ONNX native library cannot load
         report.appendLine("onnxruntime: native library loaded")
+
+        // Optional 4th argument: a portrait. Runs the REAL bundled models from the packaged app.
+        args.getOrNull(3)?.let { faceImage ->
+            val engine = FaceEngine(ModelSource { name ->
+                FaceEngine::class.java.getResourceAsStream("/models/$name") ?: error("model $name is not bundled")
+            })
+            engine.use {
+                val image = checkNotNull(DesktopMediaDecoder().decodeImage(faceImage, 1280)) { "cannot decode $faceImage" }
+                val faces = it.detect(image)
+                report.appendLine("faces detected in sample portrait: ${faces.size}")
+                check(faces.isNotEmpty()) { "no face detected in the sample portrait" }
+                val embedding = it.embed(it.alignedCrop(image, faces.first()))
+                report.appendLine("embedding length: ${embedding.size}")
+                check(embedding.size == 128) { "embedding is not 128-d" }
+            }
+        }
 
         val dbFile = File.createTempFile("facefiles-selftest", ".db")
         val db = buildDatabase(Room.databaseBuilder<AppDatabase>(name = dbFile.absolutePath))
