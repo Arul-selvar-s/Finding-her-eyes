@@ -1,0 +1,12 @@
+E2E ok:   permission screen shown
+UI texts: ['FaceFiles', 'Scan files', 'Done: 13 files, 13 new/changed, 0 removed (208 ms)', 'Find faces', 'Scan faces to search by person', 'Photos (9)', 'Videos (1)', 'Audio (1)', 'Documents (1)']
+counts: photos=9 videos=1 audio=1 documents=1
+E2E ok:   counts as expected
+E2E ok:   face scan finished
+face status: ['FaceFiles', 'Find faces', 'Faces: done · 5 found']
+E2E ok:   viewer shows detected face
+person results: 3 items
+E2E ok:   person search returned 3 items
+E2E ok:   no crash in logcat
+E2E ok:   process alive
+E2E exit=0
