@@ -1,0 +1,33 @@
+> Task :downloadWix SKIPPED
+> Task :composeApp:checkRuntime UP-TO-DATE
+> Task :unzipWix UP-TO-DATE
+> Task :composeApp:createRuntimeImage UP-TO-DATE
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeApp:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :composeApp:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :composeApp:generateComposeResClass SKIPPED
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :composeApp:kspKotlinDesktop FROM-CACHE
+> Task :composeApp:compileKotlinDesktop UP-TO-DATE
+> Task :composeApp:copyRoomSchemas NO-SOURCE
+> Task :composeApp:compileDesktopMainJava NO-SOURCE
+> Task :composeApp:assembleDesktopMainResources UP-TO-DATE
+> Task :composeApp:desktopProcessResources UP-TO-DATE
+> Task :composeApp:processDesktopMainResources SKIPPED
+> Task :composeApp:desktopMainClasses UP-TO-DATE
+> Task :composeApp:desktopJar UP-TO-DATE
+> Task :composeApp:prepareAppResources NO-SOURCE
+> Task :composeApp:unpackDefaultComposeDesktopJvmApplicationResources UP-TO-DATE
+> Task :composeApp:packageExe
+The distribution is written to D:\a\Finding-her-eyes\Finding-her-eyes\composeApp\build\compose\binaries\main\exe\FaceFiles-1.0.0.exe
+gradle/actions: Writing build results to D:\a\_temp\.gradle-actions\build-results\installer-1793442666814.json
+
+BUILD SUCCESSFUL in 1m 4s
+10 actionable tasks: 1 executed, 1 from cache, 8 up-to-date

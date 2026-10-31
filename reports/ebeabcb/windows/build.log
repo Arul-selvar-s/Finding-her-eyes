@@ -1,0 +1,39 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Task :downloadWix
+Download https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311-binaries.zip
+
+> Task :unzipWix
+> Task :composeApp:checkRuntime
+> Task :composeApp:checkRuntime FROM-CACHE
+> Task :composeApp:createRuntimeImage
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeApp:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :composeApp:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :composeApp:generateComposeResClass SKIPPED
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :composeApp:kspKotlinDesktop FROM-CACHE
+> Task :composeApp:compileKotlinDesktop FROM-CACHE
+> Task :composeApp:copyRoomSchemas
+> Task :composeApp:compileDesktopMainJava NO-SOURCE
+> Task :composeApp:assembleDesktopMainResources
+> Task :composeApp:desktopProcessResources
+> Task :composeApp:processDesktopMainResources SKIPPED
+> Task :composeApp:desktopMainClasses
+> Task :composeApp:desktopJar
+> Task :composeApp:prepareAppResources NO-SOURCE
+> Task :composeApp:unpackDefaultComposeDesktopJvmApplicationResources
+
+> Task :composeApp:createDistributable
+The distribution is written to D:\a\Finding-her-eyes\Finding-her-eyes\composeApp\build\compose\binaries\main\app
+gradle/actions: Writing build results to D:\a\_temp\.gradle-actions\build-results\__run_3-1793442564087.json
+
+BUILD SUCCESSFUL in 1m 4s
+12 actionable tasks: 9 executed, 3 from cache
